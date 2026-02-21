@@ -1,0 +1,21 @@
+.Piros, .Kek, .Zold
+{padding:20px;
+width:200px;}
+.Piros
+{background-color:pink;
+font-size:1em;}
+.Zold
+{background-color:lightgreen;
+font-size:2em;}
+.Kek
+{background-color:lightblue;
+font-size:3em;}
+
+#flextaraolo
+{background-color:orange;
+height:200px;
+display:flex;
+flex-direction:row; /*column- oszlop irányú, row- sor irányú elhelyezkedés*/
+justify-content:center; /*sorirányba osztja el az elemeket vagyis vízsszintesen*//*flex-start - a tároló elején kezdődik, flex-end - a tároló végére kerüljenek, center - középen, space-between - szétbontja az elemeket(arányosan elosztja az elemeket), space-around - jobbra és balra is tesz helyet és az elemek közé is, space-evenly - minden üres hely egyforma méretű lesz, wrap - tördelje több sorba, nowrap - az elemeket tartsa egysorba és nyomja össze amennyire lehet,  */
+align-items: center; /*egy sorban hogy helyezkedjenek el az elemek*//*a sorban lévő elemeket máshova igazítja, flex-start - elejéhez igazít, flex-end - a tároló aljára teszi az elemeket, center - középre teszi az elemeket, baseline - az elemek szövegének alapvonala esik egy vonalra, strech - kihúzza az elemeket hogy kitöltsék a tárolót*/
+}/*align-content - az elemek sorai hogyan helyezkedjenek el, flex-start - az elején a tárolónak legyenek a sorok, flex-end - a végén legyenek a tárolónak a sorok, center - középen legyenek a sorok stb*/

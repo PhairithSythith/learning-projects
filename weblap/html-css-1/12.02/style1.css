@@ -1,0 +1,60 @@
+/*DE5JFI*/
+* {
+padding:0;
+margin:0;
+box-sizing: border-box;	
+}
+
+body {
+	font-family:Arial;
+	background-color:#3a689f;
+}
+
+header, footer {
+	background-color:#12479f;
+}
+
+header  {
+	color:white;
+}
+
+nav {
+	background-color:#00225c;
+}
+
+nav li {
+	color: orange;
+}
+
+nav li:hover{
+	background-color:orange;
+	color:#12479f;
+	
+}
+
+main{
+	width:100%;
+	max-width:1200px;
+	min-width:400px;
+	margin:0 auto;
+	background-color: white;
+}
+
+h1 {
+	text-align:center;
+	text-transform:uppercase;
+}
+
+header, footer, nav {
+	width:100%;
+}
+
+nav ul {
+	display: flex;
+	justify-content:center;
+}
+
+
+#nyitolap img {
+	width:100%;
+}

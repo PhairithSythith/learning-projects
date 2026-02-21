@@ -1,0 +1,13 @@
+label
+{display: block;}
+
+fieldset.kapcs label
+{display:inline-block;}
+
+input[type=text], input[type=password], textarea
+{background-color: pink;
+text-align:center;}
+
+input:focus, textarea:focus, select:focus
+{background-color: yellow;
+color: red;}

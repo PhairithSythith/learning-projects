@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="hu">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width,initial-scale-1">
+	<link href="./style1112.css" rel="stylesheet">
+	<title>Űrlapok</title>
+</head>
+<body>
+	<h1>Űrlapok</h1> <!--a form kliens oldalon nem feltétlenül kell de szerver oldalhoz elengedhetetlen-->
+	<form action="index.html" method="post">  <!--az action mondja meg mi és milyen a kérés a kliens oldal felől, ha nem adjuk meg akkor saját magát értelmezi alapból, a method az elküldés módja hogy hogyan csinálja de minden más ugyanaz (get-végpont ez is az alapérttelmezett (url-el küldi el) akkor jó ezt használni ha gyakran kell használni a találati listát szóval az űrlapadatokat akarom menteni címmel (pl.webáruház), post-becsomagolva, a felhasználó számára nem látható [érzékeny személyes adatok pl. jelszó, vagy nagyon nagy adat átvitelekor])---->
+		<fieldset> <!-- ez már látható a böngészőben, mint egy keret, ez nem funkcionális, feladata hogy az űrlap látható leggyen és tárolóként viselkedik mint a  div-->
+			<legend>Szövegelemek</legend><!-- megjelnik a kereten beágyazva, cíímke/felirat, fieldset része -->
+			<label for="nev">Felhasználónév</label><!-- ezek feliratok az űrlapelemeknél, ezeket hozzá kell kapcsolni az adott űrlap elemekhez, for-hoz id-t kell megadni-->
+			<input type="text" id="nev" name="nev" value="Felhasznalónév" maxlength="10" placeholder="Adja meg a felhasználónevét" required size="25"> <!-- ugyanazt az elemet többször meglehet adni, id-val adjuk meg melyikre gondolunk,type mindig kell az alapértelmezett a text, nem elég csak az id a szerver miatt kell a name is hogy elküldje az adatokat a szervernek de ennek nem kell egyedinek lennie, input-nak nincs záró elem, a value az érték ezt küldi a szerver oldalnak ha már itt "" írok bele akkor már az indulásnál is megjelenik, megadhatom de a felhasználó átírhatja---->
+			<!-- (value után)disabled nincs értréke de disabled="disabled" is jó de nem kell, ez egy olyan tulajdonság ami deaktiválja az űrlapelemet nem is küldi el a szervernek (nincs fókusz), ezt programból irányítjuk-->
+			<!-- (value után)readonly-ban sem tud változtatni a felhasználó, ez kap fókuszt és elküldi, pl. ha valamit nem akarom hogy változtassanak akkor azt nem fogja tudni a felhasználó-->
+			<!-- maxlength hogy mennyi a max karakter amit írni lehet-->
+			<!-- placeholder nem ugyanaz mint a value, ez akkor látszik amikor a mező üres, segíti a felhasználót hogy mit kell csinálni, magyarázó szöveg-->
+			<!-- required az a "kötelező kitölteni"-->
+			<!-- size az az hogy hány karakter hosszú legyen a hely, nem ugyanaz mint a maxlength (ez csak a benne levő tartalom hossza)-->
+			<!-- <br> <!--mivel inline ezért ha nem egymás mellett akarjuk akkor kell a sortörés-->
+			<label for="jelszo">Jelszó</label>
+			<input type="password" name="jelszo" id="jelszo" maxlength="10" placeholder="Adjon meg egy jelszót" required size="25"> 
+			<!-- a password ugyanolyan mint a text, ugyanúgy viselkedik az a különbség hogy a böngésző elfedi, fontos hogy NEM kódolja, csak elfedi (hellyettesítő karaktert ad meg)-->
+			<label for="bio">Írjon magáról</label>
+			<textarea id="bio" name="bio" placeholder="Ide írja le azt amit gondol" rows="4" cols="50"></textarea>
+			<!-- a textarea hiába űrlaap elem nem input elem, hosszú szöeveget lehet írni ide, ennek nem value lesz hanem tartalma a 2 tag között, rows a sorok száma, cols a karakteroszlopok -->
+		</fieldset>
+		
+		<fieldset class="kapcs">
+			<legend>Kapcsolók</legend>
+			<label for="ell">olvassa el a szabályzatot</label> <!-- kétállású kapcsoló (igen/nem), be és ki lehet kapcsolni, kell neki érték, csak bekapcsolt értéke van, csak akkor küldi el ha be lett kapcsolva-->
+			<input type="checkbox" id="ell" name="ell"  value="true" checked> <!-- a checked ha megadjuk akkor alapjáraton  bekapcsoolt állapotú lesz-->
+			<!--a chekbox önálló elem vagy true vagy false-->
+			<p>Szak</p> <!-- rádió button- választós, akármennyi lehet belőle -->
+			<label for="pia">PIA</label> <!-- így mindet ki lehet választani ha nincs csoportban (name), csoportban csak 1 lehet kiválasztva (name)-->
+			<input type="radio" id="pia" name="szak" value="pia" checked><!--1 értéket küld fel, kell érték -->
+			<label for="mia">MIA</label>
+			<input type="radio" id="mia" name="szak" value="mia"><!-- ezt nem lehet kikapcsoni, a checkboxot igen, itt csak választani lehet, kivéve az induláskor mert akkor alapból nincs kiválasztva-->
+			<label for="gia">GIA</label>
+			<input type="radio" id="gia" name="szak" value="gia"><!-- a checked-el alapjáraton be lesz kapcsolva/kiválasztva -->
+		</fieldset>
+		
+		<fieldset>
+			<legend>Választó listák</legend>
+			<label for="kurzus">Kurzus</label>
+			<select id="kurzus" name="kurzus" size="1"> <!--ezzel adom meg hogy lista, itt a size azt adja meg hány soros vagyis mennyi látszik (szóval 1- lenyíló lista, több- lista doboz) -->
+			<option>Weblapkészítés</option><!-- ezek a lista elemek annyit adok meg amennyit csak szeretnék-->
+			<option selected>Adatbázisok</option><!-- selected- hogy mi legyen alapjáraton első indulásnál kiválasztva -->
+			<option>Programozás alapjai</option><!-- értéknek vagy a benne levő szöveget vagy az általunk megadott value küldi el-->
+			<option>Objektum Programozás</option><!-- olyan széles amilyen széles a tartalma, css-ből lehet korlátozni meg alakítani -->
+			</select>
+		</fieldset>
+		<fieldset>
+			<label for="nap">Melyik napon?</label>
+				<select id="nap" name="nap" size="5" multiple> <!-- multiple azt csinálja hogy több elemet lehessen kiválasztani egyszerre (vagy az egeret húzva vagy ctrl+shift vagy alt nyomva tartva) -->
+			<optgroup label="Hétköznap"> <!--lista csoport, mindegyik listánál működikn nem befolyásolnak választást, inkább vizuális segítség, lehet nekik adni címkét (label) -->
+				<option value="1">Hétfő</option><!-- ha több elem van kiválasztva akkor tömbbként küldi a szerver oldalnak-->
+				<option value="2" >Kedd</option> <!-- itt a választott option kódját vagyis az értékét küldi a szervernek-->
+				<option value="3">Szerda</option> <!-- a lista doboz a lenyíló listában a választható elemek számában különbözik, mert a lenyíló listában 1 elemet lehet kiválasztani, amíg a lista dobozban megengedett hogy 0 elem legyen kiválasztva vagy több elem kiválasztása-->
+				<option value="4">Csütörtök</option>
+				<option value="5">Péntek</option>
+			</optgroup>
+			<optgroup label="Hétvége"> <!--tárolóként is szolgál azaz formázni is lehet -->
+				<option value="6">Szombat</option> 
+				<option value="7">Vasárnap</option>
+			</optgroup>
+			</select>
+		</fieldset>
+		<fieldset>	
+			<legend>Egyéb</legend>
+			<label for="kep">Profilkép</label><!-- a szerverre akkor történik a feltöltés ha el lett küldve az űrlap, ez biztonsági kockázat de szerver oldalon lehet konfigurálni és szabályozni-->
+			<input type="file" name="kep" id="kep"> <!-- fáljfeltöltés, a böngésző jeleníti meg és bonyolítja le -->
+		
+		<label for="datum">Aktuális dátum</label>
+		<input id="datum" name="datum" type="hidden" value="2025.11.15"><!-- rejtett űrlapelem, nem látszik egyáltalán, arra jó hogyha plusz információkat akarunk tudni, pl hogy mikor lett csinálva -->
+		
+		<label for="szuldatum">Születési dátum</label>
+		<input name="szuldatum" id="szuldatum" type="date"> <!-- a böngésző adja meg hogy néz ki, lehet adni kezdeti értéket -->
+		
+		<label for="szin">Kedvenc szín</label>
+		<input type="color" name="szin" id="szin"> <!-- ilyeenkor a value a kiválasztott szín színkóda, lehet adni kezdeti értéket-->
+		</fieldset>
+		
+		<fieldset>
+			<legend>Gombok</legend> <!-- kettőféleképpen lehet gombokat létrehozni (ugyanúgy működik, máshogy kell megírni de funkcionálisan ugyanaz) de 3 féle gomb van -->
+			<input type="submit" value="Küldés"> <!-- submit - kész, oké, mehet, az űrlapot fogja elküldeni a böngésző, itt a value az a szöveg vagy szám ami a gombon jelenik meg -->
+			<input type="reset" value="Alaphelyzet"> <!-- vissza állítja az alaphelyzetet az egész űrlapon, nem kitörli a tartalmat-->
+			<input type="button" value="Helló" onclick="window.alert('Helló világ')"> <!-- általános gomb, ehhez nincs beépített művelet, önmagában semmit sem csinál, ezt programozni kell, lehet beletenni képet is-->
+			
+		
+		</fieldset>
+		
+		</fieldset><!-- hiddenek is muszáj value, DE ezt programmal szoktuk most ez neki teljesen fix -->
+	</form> <!-- ez csak az űrlap definíciója, innen tudja a böngésző hogy mettől-meddig van, bármely más elemet is lehet írni bele csak űrlapot nem lehet beleágyazni---->
+</body>
+</html>

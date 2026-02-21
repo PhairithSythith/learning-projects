@@ -1,0 +1,79 @@
+
+Body
+{margin:0;
+padding:0;
+background-color:purple;}
+header 
+{background-color: olive;
+color: white;
+padding:1px;}
+main
+{width: 100%;
+max-width: 1000px;
+min-height: 400px;
+margin: 0 auto;
+padding:1px;
+background-color: white;
+position: relative;}
+.kisDiv
+{width:100px;
+height:100px;}
+.piros
+{background-color: red;}
+.zold
+{background-color: green;}
+.kek
+{background-color:blue;}
+#rel /*így lehet megadni id-t*/
+{position: relative; /*a relatív elmozgatható a statikusan (a statikus nem számít pozicionáltnak) megaadott nem*/
+top:50px;
+left:70px;}
+#abs
+{position: absolute; /*Innentől a szülő elemet nézi, ahhoz viszonyít a szöveget ilyesmit nem. A szülő eleme a referencia helye, hogyha az pozicionálva van*/
+top:-50px; /*óvatosan mert ezekkel kilehet tolni az elemeket a képről*/
+left:200px;}/*ez görgetésnél megy tovább a fixed az nem fog mozdulni*/
+#fix 
+{position:fixed; /*muszáj megadni az elhelyezkedést, különben nem lesz a helyén. A Uport-hoz(kerethez/ablakhoz amit látunk)ahhoz pozicionál*/
+bottom:100px; /*kikerül a szövegből/szövegfolyamból*/
+right:100px;}
+/*sticky fix és relativ keveréke, ha kigörgetnéd az oldalról akkor megragad pl: a menük, mozog amíg el nem görgeted és utána oda ragad*/
+/*ezeket ritkán használunk, inkább nem */ 
+.Lebeg
+{float:left;} /*népszerű, mert automatikusan rendeződik a kijelzőtől függően. Arra megy fel (mint egy lufi) amerre álítom ha a szöveg belefér akkor mellé ha nem akkor alá kerül*/
+.clear
+{clear:both;}/*lebegtetés megtörése a clear osztállyal*/
+.floatContainer
+{background-color: yellow;}
+.floatContainer::after /*pszeudo kijelölő, after azt csinálja hogy ezután az elem utan beszúr egy tertalmat amit meg kell adni*/
+{content:"";
+clear:both;
+display:block;}
+#lent /*nem nagyon szoktuk használni, leginkább arra hogy vagy legfelülre vagy legalulra tegyünk vmit*/
+{z-index: -1; /*vagy -1 vagy nagyon magas szám*/
+position: relativ;} /*ha átlátszó lenne a main látszódna alatta*/
+#vis 
+{visibility: hidden;}/*ez ott van csak nem látható, a szöveg érti/látja figyelembe veszi*/
+#disp /*megjelenési formát lehet változtatni spamből tud pl blokkot csinálni és hasonlók*/
+{display:none;}/*így a szöveg nem értelmezi, úgy kezeli hogy nincs ott pl.: legördüli menü, csak akkor van ott ha váltogatáshoz használod programból*/
+#op
+{opacity:0.3;}/*0-1 és között kell megadni, az egész elemre érvényes szöveggel, képre is megadható*/
+#alpha	/*itt is 0 és 1 között kell megadni az "a" értéknek az átlátszóságot*/
+{background-color: rgba(0,0,255,0.2)} /*ezt csak háttérnek lehet megadni amíg az opacity-t mindennek*/
+#of     /*meghatározza mi történjen a túlcsordult szöveggel*/               
+{overflow:auto;} /*visible -látható, hidden-ami kicsordul az egyáltalán nem látszik, scroll-mindenhova tesz görgető sávot. EZ FONTOS A DINAMIKUS OLDALAKNÁL*/
+#takaro /**/
+{width: 100vw;/*vw- nézetszélesség, minden ami látható*/
+height:100vw;
+position: fixed; /*automatikusan bal felülre teszi de nekünk jó ott, mindenhol 0 kell*/
+top:0px;
+left:0px;/*amíg nincs háttér átlehet "nyúlni rajta"*/
+background-color: rgba(0,0,0,0.4);
+z-index:2000;} /*ezzel legelőre hozzuk*/
+#panel
+{width: 400px;
+padding:50px;
+background-color: orange;
+text-align: center;
+font-size:2em;
+margin: 100px auto;
+border-radius: 25px;}

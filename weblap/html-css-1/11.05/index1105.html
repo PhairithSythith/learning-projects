@@ -1,0 +1,113 @@
+<DOCTYPE HTML!>
+<html lang="hu">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width, init-scale=1.0">
+	<title>Táblázatok</title>
+	<link rel="stylesheet" href="./style1105.css">
+	<style>
+	</style>
+</head>
+<body>
+	<h1>Táblázatok</h1>
+	<!-- ZH-n nem elfogadott oldalszerkezet kialakítására, csak táblázatkként való használatat elfogadott-->
+	<!-- egyáltalán nem reszponzív mint oldalelrendezés	ezért se lehet használni-->
+	<h2>Táblázat szerkezete</h2>
+	<table> <!-- csak táblázat elemek/tagek csak sorrendben lehetnek benne-->
+		<tr>
+			<th>fejléc 1</th> <!-- speciális cella, fejléc cella, pl első sor vagy oszlop, bármi kerülhet bele-->
+			<th>fejléc 2</th><!-- annyit teszek bele th-ból amennyi oszlopot szeretnék-->	
+			<th>fejléc 3</th>	
+		</tr>
+			
+		<tr>
+			<td>adat 1</td> <!-- sima cella az első td az első th alá megy, ugyanannyinak kell lennie belőlük-->
+			<td>adat 2</td> <!-- először a táblázatot kell megcsinálni, utána feltölteni tartalommal-->
+			<td>adat 3</td>
+		</tr>
+
+		<tr>
+			<td>adat 4</td>
+			<td>adat 5</td>
+			<td>adat 6</td>
+		</tr>
+	</table>
+	
+	<h2>Cellák kiterjesztése</h2>
+		<table>
+		<tr> <!-- csak egymás melletti cellákat lehet összevonni (jobbra vagy le, oszlop irány-sorirány)-->
+			<td colspan="2">1.1</td>
+			<!-- <td>1.2</td> -->
+			<td>1.3</td>
+		</tr>
+		
+		<tr>
+			<td>2.1</td>
+			<td rowspan="2">2.2</td>
+			<td>2.3</td>
+		</tr>
+		
+		<tr>
+			<td>3.1</td>
+			<!-- <td>3.2</td> -->
+			<td>3.3</td>
+		</tr>
+		</table>
+	
+	<h2>Öszzetett táblázat</h2>
+		<table id="masik">
+		
+		<caption>Összetett táblázat</caption> <!-- címke, minden más tartalom előtt kell lennie a table mögött-->
+		<!-- táblázat felett jelenik meg a caption -->
+		<colgroup>
+			<col> <!-- oszlop tag de ez nem oszlop csak ezen keresztül lehet hivatkozni az oszlopokra, annyi kell belőle ahány oszlop, tr előtt caption után kell-->
+		</colgroup> 
+		 
+		<colgroup class="kozep"> <!-- oszlopok csoportosítása, mindegyik oszlopot bele kell tenni -->
+		 	<col>
+		</colgroup>
+		
+		<colgroup class="jobb">
+			<col>
+		</colgroup>	
+
+		<colgroup class="bal">
+			<col>
+		</colgroup> 
+		 
+	<thead> <!-- nem kötelező de külön lehet formázni vele, de használatnál mindnek kell kapnia-->
+		 <tr>
+			<td>1.1</td>
+			<td>1.2</td>
+			<td>1.3</td>
+			<td>1.4</td>
+		 </tr>
+	</thead> <!-- lehetnek a bodyk funkcionálisak, pl nyomtatáshoz vagy hogy görgethető legyen stb-->
+	<tbody>
+		 <tr>
+			<td>2.1</td> <!-- sor formátum erősebb mint az oszlop-->
+			<td>2.2</td>
+			<td>2.3</td>
+			<td>2.4</td>
+		 </tr>
+	</tbody> 
+	<tbody> 
+		 <tr>
+			<td>3.1</td>
+			<td>3.2</td>
+			<td>3.3</td>
+			<td>3.4</td>
+		 </tr>
+	</tbody> 
+	<tfoot>	 
+		 <tr>
+			<td>4.1</td>
+			<td>4.2</td>
+			<td>4.3</td>
+			<td>4.4</td>
+	</tfoot>	
+		 </tr>
+		</table>
+	
+</body>
+</html>

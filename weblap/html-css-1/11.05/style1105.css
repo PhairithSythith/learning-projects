@@ -1,0 +1,58 @@
+body
+{background-color: grey;
+}
+
+h1, h2
+{text-align:center;}
+
+table
+{margin-left:auto;
+margin-right:auto;
+border-width:3px;
+border-style:solid;
+border-color:red;
+border-collapse:collapse; /*így az egymás melletti vonalakat össze vonja*/
+}
+
+th, td
+{border: 1px solid blue; /* ilyenkor minden külön dobozkába van*/
+padding:10px 15px;}
+
+#masik
+{background-color:yellow ;
+color:green;
+border: 2px solid white;}
+
+table#masik col /*pontosabb kijelölés, szűkít a table hogyha másik oldalnál felhasználnák akkor ne ütközzön másik stílussal*/
+{width:100px;
+}
+
+table#masik .bal col 
+{background-color: pink;}
+
+table#masik .jobb col 
+{background-color: orange;}
+
+table#masik tr 
+{height:100px;} /* ha adok neki magasságot és szélességet akkor rögzül a cella, általában a soroknak nem adunk magasságot*/
+
+table#masik thead tr 
+{color: red;
+text-align:left;
+vertical-align:top;}
+
+table#masik tbody tr 
+{text-align:center;
+vertical-align:center;}
+
+table#masik tfoot tr 
+{background-color:magenta;
+text-align:right;
+vertical-align:bottom;}
+
+table#masik tr td:first-of-type /*first-child is jó, minden ilyen szülőben minden első ilyen elem*/
+{vertical-align:top;}
+
+table#masik tr td:last-child
+{vertical-align:bottom;}
+

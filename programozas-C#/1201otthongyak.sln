@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1201otthongyak", "1201otthongyak\1201otthongyak.csproj", "{021B45BE-2D76-4813-86C2-45774AD61AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FejVagyIras", "FejVagyIras\FejVagyIras.csproj", "{811E6D17-3A9F-4423-95A1-F4FE998F3743}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{021B45BE-2D76-4813-86C2-45774AD61AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021B45BE-2D76-4813-86C2-45774AD61AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021B45BE-2D76-4813-86C2-45774AD61AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021B45BE-2D76-4813-86C2-45774AD61AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811E6D17-3A9F-4423-95A1-F4FE998F3743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811E6D17-3A9F-4423-95A1-F4FE998F3743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811E6D17-3A9F-4423-95A1-F4FE998F3743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811E6D17-3A9F-4423-95A1-F4FE998F3743}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BEA6EED-EF54-4CD9-A049-C79BE5BA24CD}
+	EndGlobalSection
+EndGlobal

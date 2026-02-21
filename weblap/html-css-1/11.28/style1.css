@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3a689f;
+}
+
+header {
+    background-color: #12479f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navv {
+    background-color: #00225c;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+nav a {
+    color: orange;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav a:hover {
+    background-color: orange;
+    color: #00225c;
+}
+
+.fotarolo {
+    max-width: 1200px;
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: white;
+	display:block;
+}
+
+.fotarolo > *:not(img) {
+	padding:20px;
+}
+
+img {
+    width: 100%;
+    margin:0;
+	padding:0;
+}
+
+ .jobb img {
+    width: 30%;
+    float: right;
+}
+
+#tortenet, #naptar, #kapcsolat {
+    border-left: 4px solid #12479f;
+    border-top: 1px solid #12479f;
+    padding: 10px 0px;
+    margin:15px;
+}
+
+p {
+	margin-left:30px;
+}
+
+
+table {
+    width: 50%;
+    border: 3px solid orange;
+    border-collapse: collapse;
+    margin-top: 20px;
+	margin-left:50px;
+}
+
+table caption {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+table th {
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+table td {
+    border: 1px solid orange;
+    padding: 8px;
+}
+
+table td:first-child {
+    background-color: #f9dc9b;
+    font-style: italic;
+    width: 200px;
+}
+
+fieldset {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+input[type="text"],input[type="email"],textarea {
+    width: 50%;
+    padding: 8px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="submit"]{
+	display:block;
+	margin:10px 0;
+}
+
+.selectlabel {
+    display: inline-block;
+    width: auto;   
+}
+
+select {
+    display: inline-block;
+    width: auto;   
+}
+
+
+.break {
+    display: block;
+    clear: both;
+}
+
+footer {
+    background-color: #12479f;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer nav a {
+    color: orange;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 650px) {
+
+    .jobb img {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+        width: 100%;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="hu">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width, init-scale=1.0"> <!-- név, tartomány/érték = nézőpont, eszközszéles, 1:1-hez zóval arányosan-->
+	<title>Reszponzivitás</title>
+	<link rel="stylesheet" href="./stilus.css">
+</head>
+	<h1>Reszponzivitás</h1>
+	<!-- a pixel nem ugyanazt jelenti monitoron-telefonon-tv-n, saját weblapnál nem elvárás hogy reszponzív legyen de jó!!! viszont ne csússzon szét se nagy se kicsi nézetnél-->
+	<div class="row"> <!--soron belüli rendezés-->
+		<div class="piros col-fel col-kozep-harmad col-nagy-negyed"></div>
+		<div class="zold col-egesz col-kozep-harmad col-nagy-fel"></div> <!-- ha nem fér egy sorban akkor egymás alá közvetlenül jelenik meg (pl.: fel-fel-egesz)-->
+		<div class="kek col-fel col-kozep-harmad col-nagy-negyed"></div>
+	</div>
+	
+	<h2>Láthatóság</h2> <!--nézettől függően jelenjenek meg az elemek-->
+	<div class="piros lathato rejtett-kozep"></div>
+	<div class="zold rejtett lathato-kozep rejtett-nagy"></div>
+	<div class="kek rejtett lathato-nagy"></div>
+	
+	<h2>Képek</h2>
+	<picture> <!-- képekhez több kép/ lehetőség megadá (pl. letöltéshez), még azért jó mert van média attribútum-->
+		<source srcset="./1.jpg" media="min-width:900px">
+		<source srcset="./2.jpg" media="min-width:600px">
+		<!--<source srcset="./3.jpg">-->
+		<img src="./4.jpg"> <!-- ez azért van itt hogy fixen értse az összes böngésző meg már szoká-->
+	</picture>
+	
+<main>
+</main>
+<body>
+</body>
+</html>

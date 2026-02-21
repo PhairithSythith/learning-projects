@@ -1,0 +1,70 @@
+*{box-sizing: border-box;}
+body
+{margin:0;
+padding:0;}
+h1
+{color:yellow;}
+.piros
+{background-color:pink;}
+.zold
+{background-color:lightgreen;}
+.kek
+{background-color:lightblue	;}                   
+.piros, .zold, .kek
+{height:100px;}
+
+.col-egesz 
+{width:100%;}
+.col-fel
+{width:50%;}
+.col-harmad
+{width:30%;}
+.col-negyed
+{width:25%;}
+
+.row [class*=col-] /*attribútom= ami row osztályban van és van class attribútoma és tartalmazza a col- on kötőjelet*/
+{float:left;}
+
+.row:after
+{content:"";
+clear:both;
+display:block;}
+
+/*@media olyan elemek, amiikkel különböző stílusokat lehet megadni kkülönböző megjelenítésekhez, általában előszőr mobilra kell beállítani (legkisebb nézet)*/
+@media all and (min-width: 600px)/*vagy screen, vagy print vagy all minden, méret- minél legyen a váltás, színmélységhez is llehet adni váltást, hogy álló vagy fekvő stb*/
+{h1
+{color:red;}
+.col-kozep-egesz 
+{width:100%;}
+.col-kozep-fel
+{width:50%;}
+.col-kozep-harmad
+{width:30%;}
+.col-kozep-negyed
+{width:25%;}
+.lathato-kozep
+{display:block;}
+.rejtett-kozep
+{display:none;}
+}
+@media all and (min-width: 900px)
+{.col-nagy-egesz 
+{width:100%;}
+.col-nagy-fel
+{width:50%;}
+.col-nagy-harmad
+{width:30%;}
+.col-nagy-negyed
+{width:25%;}
+
+.lathato-nagy
+{display:block;}
+.rejtett-nagy
+{display:none;}
+	
+}
+
+.lathato
+{display:block;}
+.rejtett
+{display:none;}

@@ -1,0 +1,91 @@
+body
+{background-color:grey;}
+.sav 
+{width:80%;
+height:100px;}
+
+#alap /* background-image lehet megadni a színátmenetet*/
+{background-image:linear-gradient(to right, purple, blue);/*3 fajta van, mindegyik hzasonló, legalább 2 színt meg kell adni, alapértelmezetten vízszíntes az egyenes, függőleges az átmenet*/
+}/*to right balról jobbra megy az átmenet*/ 
+#zaszlo
+{background-image:linear-gradient(red 20%,white 40%, white 60%,green 80%); /*megtudjuk mondani a szín helyét pl 20% az elem 20%-ig piros utánna kezdődik az átmenet*/
+margin:10px;}
+.kor 
+{height:200px;
+width:200px;
+border-radius:50%;
+margin:70px;}
+#golyo
+{background-image: radial-gradient(white, black);}
+#kokarda
+{background-image: radial-gradient(green 20%, white 40%, white 50%, red 70%);}
+.doboz
+{width:300px;
+height:100px;
+background-color: orange;
+margin:50px;
+box-shadow:0px 0px 20px white;}
+.szoveg
+{color:red;
+font-size:3em;
+margin:60px;
+text-shadow: 1px 2px 5px yellow;} /*nem célszerű nagyon eltolni az árnxékot, célszerű elmosni és más színt használni mint a szöveg színe (ne rontsa az olvashatóságot)*/
+
+.elem
+{width:200px;
+height:200px;
+background-color:pink;
+margin:70px;}
+#eltolt
+{transform: translate(200px, -100px); /*x irány, y irány*/}
+/* ez abban különbözik a position-tól hogy nem festi újra/rendeleri az egész oldalt a böngésző csak az elemet, többször eltolásnál ez a jobb */
+
+#meret
+{transform:scale(0.2, 1) /*0-1 mennyivel, hanyadára csökkentse a méretét, felette annyival lesz nagyobb*/
+}
+#forgat
+{transform:rotate(65deg);}
+
+
+#nyujt
+{transform: skew(20deg, 30deg);}
+/* transform tulajdonságot egyszerre általában csak 1x adhatok meg mert a legtöbbször egyik felül írja a másikat*/
+#forgat3D
+{ font-size: 2em;
+transform:rotateX(70deg);}
+
+#atmenet
+{	width: 200px;
+height:300px;
+margin:40px;
+background-color: blue;
+transform: rotate(0deg);
+transition: background 3s, transform 1s;
+transition-delay: 0.5s;
+transition-timing-function:ease-in;}/*linear- egyenletes lejátszás, ease-in - lassan kezdődő ami begyorsul, ease-out-gyorsan kezdődik és lelassul, ease-in-out-lassul gyorsul majd visszalassul*/
+#atmenet:hover
+{background-color: red;
+transform: rotate(365deg);}
+
+/*animáció*/
+@keyframes mozog
+{0% {width:200px;
+background-color:yellow;}
+50% {background-color:red;
+transform: translateX(200px);}
+100%{width:1200px;
+background-color:pink;}}
+/*from-0%, to-100%*/
+
+
+#anim
+{width:200px;
+height:100px;
+background-color:yellow;
+margin:50px;
+animation-name: mozog;
+animation-duration:3s;
+animation-iteration-count: infinite;
+animation-delay:1s;
+animation-direction:alternate;
+animation-timing-function:ease-in-out;}

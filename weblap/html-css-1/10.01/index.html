@@ -1,0 +1,91 @@
+<!-- 2025.10.01 weblap gyak óra -->
+<!doctype html> 
+<html lang="hu">
+	<head> 
+		<title>CSS nyelv </title>
+		<link href="./stíle1001.css" rel="stylesheet">
+		<meta charset="utf-8">
+		<style> <!-- * minden taget kijelöl (univerzális szelektor/kijelöl)-->
+		/*kis nagy betű érzékeny nyelv a css */
+		{/*univerzális*/
+		box-sizing: border-box;
+		}
+		h1 <!-- összes h1 taget jelöli ki--> 
+		{ /*elem: összes h1 tag*/
+		color: rgb(255,0,0);
+		 */color:#L3E7LLP8;*/ 
+		}
+		.fontos { /*osztály: amelyek ebbe az osztályba tartoznak*/
+		font-weight: bold;
+		}
+		#top { /*EZ AZ AZONOSÍTÓ AMELYNEK EZ AZ ID-JA*/
+		font-style: italic;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<h1 id="top">Szövegelemek </h1> <!-- id = egyedi azonosító jel, top= hogy hol van-->
+		<h2>Blokkos </h2>
+		<p>előző óra </p>
+		<h2>Inline</h2>
+		<p>Az inline elemek sorfolytonosan jelkennek meg
+		Néhány gyakori inline elem:</p>
+		<strong>nyomatékos</strong>,
+		<em>hangsúlyos</em>, <!-- ugyanaz mint a strong-->
+		<code>forráskód </code>,
+		<q>idézet</q>,
+		<span>stb.</span> <!-- ezek NEM formázások hanem jelentések!!! ez szerkezetért és tartalomért felelős a megjelenésért a CSS-->
+		<!--a span az univerzális egyedül semmilyen jelentéssek nem bíró, általam definiált Inline elem, önmagában nem csinál semmit-->
+		</p>
+		<h2>Formázó tag</h2> <!-- van css megfelelője és ezek ZH-n elfogadottak de kezdtek jelentést is csatolni hozzájuk-->
+		<p>
+		<b>Félkövér</b>
+		<i>dőlt</i>
+		<u>aláhúzott</u>
+		</p>
+		<h2>Entitások</h2> <!-- az entitásoknak mindig van neve vagy kódja-->
+		<p>Például entitással tudunk tag-et megjeleníteni, mint a &lt;p&gt;.</p> <!--ott használjuk ahol szimbólumot akarunk megjeleníteni pl.: <p> és a nyelvben jelentése van-->
+		<h1>Listák</h1>
+		<ul> 
+		  <li> macska </li>
+		  <li>kutya</li>
+		  <li>kacsa</li>
+		  <li>liba</li>
+		  <li>papagáj</li>
+		</ul> <!-- rendezetlen lista, vagyis felsorol, több tagből épül fel, az <ul> "gyereke" közvetlenül csak az <li> lehet, <li> belül bármi lehet, <li> minid zárni és nyitni kell---->
+		<h2>Rendezett lista</h2>
+		<ol>
+		  <li>őskor</li> 
+		  <li>ókor</li>
+		  <li>középkor</li>
+		</ol>
+		<h1>Linkek</h1>
+		<p>
+		Hivatkozások a szövegen belül, amelyek egy másik dokumentumra vagy bármire amit a böngésző ért (ha nem érti akkor letölti) 
+		<a href= "https://www.jgypk.u-szeged.hu/">JGYPK</a> <!--szöveges link a legjobb, ahhoz hogy linkként működjön hivatkozni kell rá-->
+		meg nyithatja új böngésző ablakban például:
+		<a href="https://www.jgypk.u-szeged.hu/" target="_blank">SZTE</a> <!-- targettel megadom hogy máshol nyissa meg a blankkel azt adom meg hogy másik lap legyen a másik hely -->
+		VAlamint hivatkozhat egy dokumentum adott pontjára, pl:
+		<a href="#top">olldal eleje</a>
+		</p>
+		<h1>Képek</h1>
+		<img src="data:image/jpeg;base64,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" alt="Dzsukel macska">
+		<!-- <img src="./Névtelen.jpg" alt="Cápafsz" > -->
+		<!--abszolút (gyökértől indul) és relatív (visszafelé halad) hivatkozás weblapnál mindig RELATÍV hivatkozás kell mint elvileg a felette levő sorban csak nem működik---->
+		
+		<h1>CSS</h1>
+			<p style="color: orange">A stílust 3 féle módon adhatok meg</p> <!--ha így adunk meg stílust akkor ez csak erre a tagre érvényes és így nem hordozható-->
+			<ul>
+				<li>Szövegközi</li>
+				<li>beágyazott</li>
+				<li class="fontos">stílusgyök</li>
+			</ul>
+			<p class="fontos">stílusformázás előnyei</p>
+			<ul>
+				<li>áttekinthetőbb forráskód</li>
+				<li>összetett formázás</li>
+				<li>hordozható stílus</li> <!--stb előnyök-->
+			</ul>
+	</body>
+	</html>

@@ -1,0 +1,23 @@
+/*index.html stílus folytatása*/
+a:link /*pszeugdo: fajtája, állapota vagy része*/
+{ text-transform: uppercase; }
+a:visited 
+{ color: orange; }
+a:hover 
+{ color: darkblue; }
+li:first-letter 
+{ font-size: 2em; } 
+[class] /*attribútum: amelynek van ilyen attribútuma, milyen értéke legyen hogy kezdődjön*/
+{ font-family: 'Architects Daughter', Garamond; }
+body { background-color: rgb(255,95,31);}
+/*bármilyen ezelőtt szereplő dolgot fel lehet sorolni vesszővel*/
+h1, h2 
+{ font-variant: small-caps; }
+li.fontos /*metszete a két kijelölőnek*/ 
+{ text-decoration: underline; }
+ol li /*helyzetérzékeny: li ami az ol belül vannak*/ 
+{ list-style-type: lower-roman }
+ul> li /* gyereke: li amelyek közvetlen gyerekei az ul-nak*/ 
+{list-style-type: circle; }
+
+/*HÁZI választani egy tetszőleges személyt akit bemutatunk (legyen tiri-tarka stb...)*/

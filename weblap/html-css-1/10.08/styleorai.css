@@ -1,0 +1,57 @@
+* {
+	margin: 0; /*belső margó*/
+	padding:0; /*külső margó*/
+	box-sizing: border-box; /*content box: belső margó növelés-> felfújja az elemet, border box elkezdi összenyomnin a belső tartalmat, a border boxal egyszerűbb számolni*/
+}
+body
+{background-color: #FF5F1F; /*megadható névvel és kóddal is a szín, repeat x-y vagy no repeat is van*/
+background-image: url(./zzz.jpg);
+/*background-repeat: repeat-y;*/
+/*background-position: top right;*/
+background-size: 200px;
+background-attachment: fixed;
+/*background-image: url(./2.jpg); */
+/*background-repeat: repeat-x; */
+/*background-position: bottom left;*/
+background-size: 200px;
+background-attachment: fixed;
+} 
+header{
+	padding: 1px;
+background-color: red;
+color: white;
+width: 100vw;}
+header>h1 /*közvetlen gyerek- bármilyen mélyen lehet benne simán header h1 nem közvetlen gyerek; szülő-gyerek margót összevonja de ezt meglehet szüntetni*/
+{/*
+	margin-top: 10 px;
+	margin-right: 20 px;
+	margin-bottom: 30px;
+	margin-left:20 px;*/
+	margin: 10px 20px 30px 20px; /*fentről jobbra mintt az óra so fent jobb lent bal belső margónál is ugyanezS*/
+}
+main{
+width: 60%;
+min-width: 600px;
+min-height: 400px; 
+background-color: yellow;
+margin: 0 auto;
+}
+/* kifele és befele is van margó, 4 iránya van, */
+main h2
+{
+	padding: 10px 20px;
+}
+main p {
+	margin: 10px;
+	padding: 20px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: white;
+	border-left: 10px double red;
+	border-radius: 30px;
+}
+#keret
+{
+	width: 399px;
+	height: 223px;
+}

@@ -1,0 +1,31 @@
+body {
+	font-family: Arial;
+	background-color: white;
+	margin: 0;
+	padding:20px;
+}
+.kártyák {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+.kártya {
+	border: 2px solid;
+	border-radius: 10px;
+	width:250px;
+	overflow: hidden;
+}
+.kártya img {
+	width: 100%;
+	height: auto;
+}
+.kártya h3 {
+	margin: 10px;
+}
+
+.kártya p{
+	margin:10px;
+	color:black;
+	font-size:14px;
+}

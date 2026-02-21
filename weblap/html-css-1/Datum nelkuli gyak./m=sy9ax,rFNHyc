@@ -1,0 +1,12 @@
+loaded_h_0(function(_){var window=this;
+_.uNC=_.x("rFNHyc",[_.bi,_.Po,_.Kl,_.gr]);
+_.t("rFNHyc");
+var hhD=new _.fp(158520),ihD=function(a,b){return _.chD(b,a.iKc,a.state)},jhD=function(a,b){a=_.M(_.P(),'<div class="'+_.J("ghcDPe")+'"><div class="'+_.J("hHbytd")+'">');b=_.M(_.N(_.M(_.P(),'<div class="'+_.J("u0wZ6e")+'">'),_.Xjf(b,24)),"</div>");b=_.M(_.N(a,b),'</div><div class="'+_.J("ZcIEF")+'">');a='\u00c9rdemes azt is ellen\u0151riznie, hogy milyen adatokat ment ez a b\u00f6ng\u00e9sz\u0151.\u00a0<span jsaction="click:'+(_.J("Gsg9zb")+'" data-ved=""'+_.th("Dnz1jb",[],"data-ved")+_.rh(new _.I(hhD),
+!1)+'><a class="')+(_.J("wYHwUe")+'" href="https://support.google.com/accounts/answer/465#other-places&zippy=a%2Cdelete-browser-activity" target="_blank">Tov\u00e1bbi inform\u00e1ci\u00f3</a></span>');_.N(b,a);_.M(b,"</div></div>");return b},khD=function(a){return _.pKa(()=>{const b=_.XD(new _.VD,_.WD(a));_.Jg(document,"ZUAQIc",{Uv:b})})},lhD=function(a,b){const c=a.Ia("itaskb");c.empty();const d=a.Qd.If(()=>a.Hc.Ld(ihD,{state:b,iKc:a.iKc}),{Ye:_.Eh(c.el(),3)});c.append(d)},mhD=function(a){const b=
+a.Ia("MV7cDd"),c=a.Qd.If(()=>a.Hc.Ld(jhD),{Ye:_.Eh(b.el(),3)});b.append(c);a.Aa=!0},nhD=function(a,b){const c=a.Ia("rQmgr").el();c&&a.Tb.logEvent({xe:_.Ch(c,b)})},ohD=function(a,b){a.state=b;lhD(a,b);a.Aa||b===1||mhD(a);nhD(a,1)},qhD=async function(a){try{ohD(a,4);try{_.y(await _.y(phD(a))),ohD(a,5)}catch(b){_.y(),ohD(a,6)}}finally{_.y()}},phD=async function(a){try{const b=_.qTc();_.y(await _.y(a.Jd.Dc(_.sTc.getInstance(b))))}finally{_.y()}},rhD=class extends _.cs{static Sa(){return{Jc:{Hc:_.Up},
+service:{Ee:_.Ar,Gc:_.Ou,Xd:_.Su}}}constructor(a){super(a.Oa);this.state=1;this.Aa=!1;this.Ba=khD(158818);this.Ea=khD(158520);this.Hc=a.Jc.Hc;this.Jd=a.service.Ee;this.Tb=a.service.Gc;this.Qd=a.service.Xd;this.iKc=_.Rh(this.getData("kulima"),!1);this.logger=null}getState(){return this.state}Da(a){this.Tb.logEvent({xe:_.Ch(a.rb.el(),3)});this.Ea()}Ca(){nhD(this,3);var a=this.getState();switch(a){case 1:case 5:case 3:case 6:ohD(this,2);this.Ba();a=this.getData("lqdct").Mb()?5E3:3E3;this.oa=setTimeout(()=>
+{qhD(this);this.oa=void 0},a);break;case 2:clearTimeout(this.oa);this.oa=void 0;ohD(this,3);break;case 4:break;case 0:break;default:_.Za(a,"Unhandled enum case")}}};rhD.prototype.$wa$vuShse=function(){return this.Ca};rhD.prototype.$wa$Gsg9zb=function(){return this.Da};rhD.prototype.$wa$XiN8De=function(){return this.getState};_.es(_.uNC,rhD);
+
+_.v();
+});
+// Google Inc.

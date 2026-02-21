@@ -1,0 +1,42 @@
+/*Jánk Titanilla DE5JFI*/
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+body{
+	font-style: Courier New;
+	background-color:black;
+}
+main {
+	background-color:lightgrey;
+	min-width:450 px;
+	max-width:1000px;
+	width:100%;
+	margin:0 auto;
+}
+h1, h2 {
+	color:white;
+}
+
+header {
+	background: url("binary.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	width:100%;
+}
+header h1 {
+	text-align:center;
+}
+
+h2 {
+	border-left: 4px solid #fc7307;
+}
+/*
+#hatter   {
+	background: url("binary.png");
+	background-repeat: no-repeat;
+	background-size: auto;
+	margin: 0 auto;
+}*/

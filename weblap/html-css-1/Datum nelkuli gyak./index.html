@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 " >
+	<link href="./style.css" rel="stylesheet">
+	<title>🍳A mi receptkönyvünk</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>A mi receptkönyvünk</h1>
+	</header>
+	
+<div class="szurok">
+
+  <div class="kategoriak">
+    <span>Kategóriák:</span>
+    <input type="checkbox" id="desszert" name="kategoriak">
+    <label for="desszert">Desszert</label>
+
+    <input type="checkbox" id="foetel" name="kategoriak">
+    <label for="foetel">Főétel</label>
+
+    <input type="checkbox" id="leves" name="kategoriak">
+    <label for="leves">Leves</label>
+
+    <input type="checkbox" id="reggeli" name="kategoriak">
+    <label for="reggeli">Reggeli</label>
+
+    <input type="checkbox" id="ital" name="kategoriak">
+    <label for="ital">Ital</label>
+  </div>
+
+  <div class="nehezseg">
+    <span>Nehézség:</span>
+    <input type="checkbox" id="nagyonkonnyu" name="nehezseg">
+    <label for="nagyonkonnyu">Nagyon Könnyű</label>
+
+    <input type="checkbox" id="konnyu" name="nehezseg">
+    <label for="konnyu">Könnyű</label>
+
+    <input type="checkbox" id="kozepes" name="nehezseg">
+    <label for="kozepes">Közepes</label>
+
+    <input type="checkbox" id="nehez" name="nehezseg">
+    <label for="nehez">Nehéz</label>
+  </div>
+
+	<a href="#sajatRecept" class="bekuldesGomb">+ Új recept beküldése</a>
+
+</div>
+	
+<main>
+
+	<section id="elsoS">
+		<p>✨"A kedvenc házi receptjeink egy helyen - egyszerű, kipróbáltam, finom"✨</p>
+	</section>
+
+<div class="tarolo">
+	
+	<section class="desszert"  data-nehezseg="konnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🥞 Klasszikus palacsinta</h2>
+		<img src="palacsinta.jpg" alt="Palacsinta">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 20 perc</p>
+			<p>🔥 Nehézség: Könnyű </p>
+			<p>🍽 Kategória: Desszert</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>2 db tojás</li>
+				<li>20 dkg finomliszt</li>
+				<li>3 dl tej</li>
+				<li>1 csipet só</li>
+				<li>1 evőkanál cukor</li>
+				<li>1 evőkanál olaj</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	A tojásokat keverd habosra a cukorral és a sóval.</li>
+				<li>2.	Add hozzá a lisztet és fokozatosan a tejet.</li>
+				<li>3.	Simára keverd a tésztát.</li>
+				<li>4.	Forró serpenyőben süsd ki a palacsintákat.</li>
+			</ul>
+			<h3>💡 Tipp: </h3>
+			<p>Lekvárral, kakaóval vagy túróval is tökéletes</p>
+		</div>
+	</div>
+	</section>
+
+	<section class="foetel"  data-nehezseg="kozepes">
+	<div class="recept">
+		<div class="pic">
+		<h2>🍗 Ropogós sült csirkecomb</h2>
+		<img src="ropogos.jpeg" alt="Ropogós sült csirkecomb">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 60 perc</p>
+			<p>🔥 Nehézség: Közepes </p>
+			<p>🍽 Kategória: Főétel</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>4 db csirkecomb</li>
+				<li>2 evőkanál olaj</li>
+				<li>só, bors</li>
+				<li>pirospaprika</li>
+				<li>fokhagymapor</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Melegítsd elő a sütőt 180°C-ra.</li>
+				<li>2.	Fűszerezd be a csirkecombokat.</li>
+				<li>3.	Helyezd sütőpapíros tepsibe.</li>
+				<li>4.	Süsd 50–60 percig, félidőben fordítsd meg.</li>
+			</ul>
+			<h3>💡 Tipp:</h3> 
+			<p>Sült krumplival vagy salátával kínáld.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="leves" data-kategoria="leves,vegeterianus" data-nehezseg="konnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🥣 Gyors zöldségleves</h2>
+		<img src="zoldseg.jpg" alt="Gyors zöldségleves">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 30 perc</p>
+			<p>🔥 Nehézség: Könnyű </p>
+			<p>🍽 Kategória: Leves / Vegetáriánus</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>2 db sárgarépa</li>
+				<li>1 db fehérrépa</li>
+				<li>1 kis fej vöröshagyma</li>
+				<li>1 evőkanál olaj</li>
+				<li>só, bors</li>
+				<li>petrezselyem</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	A zöldségeket aprítsd fel.</li>
+				<li>2.	Olajon futtasd meg a hagymát.</li>
+				<li>3.	Add hozzá a zöldségeket és öntsd fel vízzel.</li>
+				<li>4.	Főzd kb. 25 percig.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p>Tésztával vagy galuskával is feldobható.</p>
+		</div>
+	</div>
+	</section>
+
+	<section class="foetel" data-kategoria="foetel,vegeterianus" data-nehezseg="konnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🍝 Tejszínes-gombás tészta</h2>
+		<img src="gombas.jpg" alt="Tejszínes-gombás tészta">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 25 perc</p>
+			<p>🔥 Nehézség: Könnyű </p>
+			<p>🍽 Kategória: Főétel / Vegetáriánus</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>25 dkg tészta</li>
+				<li>20 dkg csiperke gomba</li>
+				<li>2 dl főzőtejszín</li>
+				<li>1 gerezd fokhagyma</li>
+				<li>só, bors</li>
+				<li>olaj</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Főzd meg a tésztát.</li>
+				<li>2.	Pirítsd meg a gombát fokhagymával.</li>
+				<li>3.	Öntsd fel tejszínnel.</li>
+				<li>4.	Keverd össze a tésztával.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p>Reszelt sajttal tálald.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="desszert" data-kategoria="desszert,gyors" data-nehezseg="nagyonkonnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🍰 Bögrés csokis süti</h2>
+		<img src="bogres.jpg" alt="Bögrés csokis süti">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 10 perc</p>
+			<p>🔥 Nehézség: Nagyon Könnyű </p>
+			<p>🍽 Kategória: Desszert / Gyors</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>4 evőkanál liszt</li>
+				<li>2 evőkanál cukor</li>
+				<li>2 evőkanál kakaópor</li>
+				<li>1 tojás</li>
+				<li>3 evőkanál tej</li>
+				<li>2 evőkanál olaj</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Keverd össze az alapanyagokat bögrében.</li>
+				<li>2.	Mikrózd 2–3 percig.</li>
+				<li>3.	Hagyd kicsit hűlni.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p>Vaníliafagyival isteni.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="reggeli" data-kategoria="reggeli,vegeterianus" data-nehezseg="nagyonkonnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🥗 Avokádós pirítós</h2>
+		<img src="avokadosp.jpg" alt="Avokádós pirítós">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 10 perc</p>
+			<p>🔥 Nehézség: Nagyon Könnyű </p>
+			<p>🍽 Kategória: Reggeli / Vegetáriánus</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>1 db avokádó</li>
+				<li>2 szelet kenyér</li>
+				<li>Só, bors</li>
+				<li>Citromlé</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Pirítsd meg a kenyérszeleteket.</li>
+				<li>2.	Törd össze az avokádót, locsold meg citromlével, sózd, borsozd.</li>
+				<li>3.	Kend a pirítósra.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p> Szórd meg pirított magvakkal is.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="desszert" data-nehezseg="konnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🧁 Csokoládés-mogyorós muffin</h2>
+		<img src="csmmuffin.jpg" alt="Csokoládés-mogyorós muffin">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 25 perc</p>
+			<p>🔥 Nehézség: Könnyű </p>
+			<p>🍽 Kategória: Desszert</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>100 g liszt</li>
+				<li>50 g cukor</li>
+				<li>50 g vaj</li>
+				<li>1 tojás</li>
+				<li>2 ek kakaópor</li>
+				<li>50 g mogyoró</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Keverd össze a száraz és nedves alapanyagokat.</li>
+				<li>2.	Kanalazd muffin formákba, szórd meg mogyoróval.</li>
+				<li>3.	Süsd 180°C-on 15–20 percig.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p> Csokiöntettel tálalva isteni.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="foetel" data-kategoria="salata,foetel" data-nehezseg="konnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🥗 Cézár saláta</h2>
+		<img src="cesar.jpg" alt="Cézár saláta">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 15 perc</p>
+			<p>🔥 Nehézség: Könnyű </p>
+			<p>🍽 Kategória: Saláta / Főétel</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>Római saláta</li>
+				<li>Csirkemell</li>
+				<li>Parmezán</li>
+				<li>Cézár öntet</li>
+				<li>Crouton</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Süssd meg a csirkemellet, szeleteld fel.</li>
+				<li>2.	Keverd össze a salátát, öntsd rá az öntetet, szórd meg parmezánnal és croutonnal.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p> Pirított baconnel még ízesebb.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="foetel" data-kategoria="foetel,vegeterianus" data-nehezseg="kozepes">
+	<div class="recept">
+		<div class="pic">
+		<h2>🍝 Spenótos-ricottás lasagne</h2>
+		<img src="lasagnes.jpg" alt="Spenótos-ricottás lasagne">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 50 perc</p>
+			<p>🔥 Nehézség: Közepes </p>
+			<p>🍽 Kategória: Főétel / Vegetáriánus</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>Lasagne lap</li>
+				<li>Ricotta sajt</li>
+				<li>Spenót</li>
+				<li>Paradicsomszósz</li>
+				<li>Mozzarella</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Rétegezd a lasagne lapokat, spenótot, ricottát és szószt.</li>
+				<li>2.	Tetejére tegyél mozzarellát.</li>
+				<li>3.	Süsd 180°C-on kb. 35 percig.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p> Friss bazsalikommal tálald.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="ital" data-kategoria="ital,reggeli" data-nehezseg="nagyonkonnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🍌 Banános-zabpelyhes smoothie</h2>
+		<img src="bananoss.jpg" alt="Banános-zabpelyhes smoothie">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 5 perc</p>
+			<p>🔥 Nehézség: Nagyon Könnyű </p>
+			<p>🍽 Kategória: Ital / Reggeli</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>1 db banán</li>
+				<li>2 ek zabpehely</li>
+				<li>2 dl tej vagy növényi ital</li>
+				<li>Méz ízlés szerint</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Turmixold össze az összes hozzávalót.</li>
+				<li>2.	Azonnal fogyasztható.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p> Egy kevés fahéjjal még finomabb.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="foetel" data-kategoria="foetel,vegeterianus" data-nehezseg="konnyu">
+	<div class="recept">
+		<div class="pic">
+		<h2>🥘 Rántott zöldség tál</h2>
+		<img src="rantottzoldseg.jpg" alt="Rántott zöldség tál">
+		</div>
+		<div class="card">
+			<p>⏱ Elkészítési idő: 30 perc</p>
+			<p>🔥 Nehézség: Könnyű </p>
+			<p>🍽 Kategória: Főétel / Vegetáriánus</p>
+			<h3>Hozzávalók:</h3>
+			<ul>
+				<li>Cukkini, padlizsán, paprika</li>
+				<li>Liszt, tojás, zsemlemorzsa</li>
+				<li>Só, bors</li>
+				<li>Olaj a sütéshez</li>
+			</ul>
+			<h3>Elkészítés:</h3>
+			<ul>
+				<li>1.	Vágd fel a zöldségeket szeletekre.</li>
+				<li>2.	Panírozd liszt-tojás-zsemlemorzsa sorrendben.</li>
+				<li>3.	Süss aranybarnára forró olajban.</li>
+			</ul>
+			<h3>💡 Tipp:</h3>
+			<p>Tzatzikivel szuper.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section id="sajatRecept">
+	<div class="recept">
+		<div class="pic">
+		<h2>📝 Új recept beküldése</h2>
+		<img src="sajat.jpg" alt="Saját recept kép">
+	</div>
+    <div class="card">
+		<form>
+			<label for="receptNev">Recept neve:</label>
+			<input type="text" id="receptNev" placeholder="Pl. Csokis muffin">
+
+			<label for="elkeszitesiIdo">Elkészítési idő:</label>
+			<input type="text" id="elkeszitesiIdo" placeholder="Pl. 20 perc">
+
+			<label for="nehezseg">Nehézség:</label>
+			<select id="nehezseg">
+			<option>Nagyon Könnyű</option>
+			<option>Könnyű</option>
+			<option>Közepes</option>
+			<option>Nehéz</option>
+			</select>
+
+			<label for="kategoriak">Kategória:</label>
+			<select id="kategoriak">
+			<option>Desszert</option>
+			<option>Főétel</option>
+			<option>Leves</option>
+			<option>Vegetáriánus</option>
+			<option>Snack</option>
+			<option>Ital</option>
+			</select>
+
+			<label for="hozzavalok">Hozzávalók:</label>
+			<textarea id="hozzavalok" placeholder="1 db tojás, 20 dkg liszt…"></textarea>
+
+			<label for="elkeszites">Elkészítés:</label>
+			<textarea id="elkeszites" placeholder="1. Keverd össze…"></textarea>
+
+			<button type="submit">Beküldés</button>
+		</form>
+    </div>
+	</div>
+	</section>
+	
+</div>	
+</main>
+
+	<footer>
+		<p>🍳 A mi receptkönyvünk © 2026</p>
+		<p>📧 info@receptkonyv.hu | 📞 +36 30 123 4567</p>
+		<p>🍽 Desszertek | Főételek | Levesek | Italok</p>
+		<p>“Az élet túl rövid ahhoz, hogy rossz receptek miatt rossz ételeket készíts és egyél!” 😋</p>
+	</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Szűrők
+  const categoryCheckboxes = document.querySelectorAll('input[name="kategoriak"]');
+  const difficultyCheckboxes = document.querySelectorAll('input[name="nehezseg"]');
+  const recipes = document.querySelectorAll('.tarolo section');
+
+  function filterRecipes() {
+    const activeCategories = Array.from(categoryCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.id.toLowerCase());
+
+    const activeDifficulties = Array.from(difficultyCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.id.toLowerCase());
+
+    recipes.forEach(recipe => {
+      const category = recipe.className.toLowerCase();
+      const difficulty = recipe.dataset.nehezseg.toLowerCase();
+
+      const showCategory = activeCategories.length === 0 || activeCategories.includes(category);
+      const showDifficulty = activeDifficulties.length === 0 || activeDifficulties.includes(difficulty);
+
+      recipe.style.display = (showCategory && showDifficulty) ? '' : 'none';
+    });
+  }
+
+  categoryCheckboxes.forEach(cb => cb.addEventListener('change', filterRecipes));
+  difficultyCheckboxes.forEach(cb => cb.addEventListener('change', filterRecipes));
+
+  // Saját recept beküldése
+  const form = document.querySelector('#sajatRecept form');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); 
+
+    const receptNev = document.getElementById('receptNev').value;
+    const ido = document.getElementById('elkeszitesiIdo').value;
+    const nehezseg = document.getElementById('nehezseg').value;
+    const kategoriak = document.getElementById('kategoriak').value;
+    const hozzavalok = document.getElementById('hozzavalok').value.split(',');
+    const elkeszites = document.getElementById('elkeszites').value.split('\n');
+
+    const card = document.querySelector('#sajatRecept .card');
+
+    card.innerHTML = `
+      <p>⏱ Elkészítési idő: ${ido}</p>
+      <p>🔥 Nehézség: ${nehezseg}</p>
+      <p>🍽 Kategória: ${kategoriak}</p>
+      <h3>Hozzávalók:</h3>
+      <ul>${hozzavalok.map(i => `<li>${i.trim()}</li>`).join('')}</ul>
+      <h3>Elkészítés:</h3>
+      <ul>${elkeszites.map(i => `<li>${i.trim()}</li>`).join('')}</ul>
+    `;
+
+    form.reset();
+  });
+
+  // Kártyák kattintásra nyitása
+  const allRecipes = document.querySelectorAll('.recept');
+
+  allRecipes.forEach(recipe => {
+    recipe.addEventListener('click', function(e) {
+      // Csak akkor nyisson, ha nem a form elemre kattintunk
+      if (!e.target.closest('form')) {
+        const card = recipe.querySelector('.card');
+        card.classList.toggle('open');
+      }
+    });
+  });
+
+});
+  
+</script>
+
+
+</body>
+</html>

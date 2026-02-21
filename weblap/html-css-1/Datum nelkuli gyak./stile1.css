@@ -1,0 +1,192 @@
+/*Jánk Titanilla DE5JFI*/
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+body{
+	font-style: "Lucida Console", "Courier New", monospace;
+	background-color:black;
+}
+main {
+	background-color:lightgrey;
+	min-width:450 px;
+	max-width:1000px;
+	width:100%;
+	margin:0 auto;
+}
+h1, h2 {
+	color:white;
+}
+
+header {
+	background: url("binary.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	margin: 0 auto;
+	width:100%;
+	padding:20px;
+}
+header h1 {
+	text-align:center;
+	font-size:5vw;
+}
+
+h2 {
+	border-left: 4px solid #fc7307;
+	background-color: darkgreen;
+	padding:6px;
+}
+nav {
+	background-color: black;
+	height:auto;
+}
+
+nav a {
+	color:#fc7307;
+	padding: 10px;
+	text-decoration:none;
+}
+
+
+ul {
+	display:flex;
+	justify-content: center; 
+	list-style:none;
+}
+
+li {
+	border: 2px solid black;
+	height:35px;
+	align-content:center;
+}
+
+li:hover {
+	border: 2px solid  #fc7307;
+}
+
+
+#lazlo {
+	width:40%;
+	float:left;
+	margin:0 auto;
+	padding:10px;
+}
+
+.clear {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+#eletrajz p {
+	padding:10px;
+	letter-spacing: 2px;
+}
+
+#table {
+	padding:10px;
+}
+
+table {
+	border-collapse:collapse;
+	margin:0 auto;
+}
+
+table caption {
+	text-align:center;
+	border: 1px solid black;
+	padding:2px;
+}
+
+.bal {
+	border-right:1px solid black;
+	border-top: 1px solid black;
+	padding-right:4px;
+	text-align:right;
+	width:30%;
+	
+}
+
+.jobb {
+	border-left:1px solid black;
+	border-top: 1px solid black;
+	padding-left:4px;
+	text-align:left;
+}
+
+.center {
+	text-align:center;
+	border-top:none;
+}
+
+#munkassag p {
+	font-style:italic;
+	padding:20px;
+}
+
+.tort {
+	background-color:#d0b895;
+	border: 1px solid black;
+	border-radius:16px;
+	width:80%;
+	margin:20px auto;
+	padding:10px;
+}
+
+#sztori, #nev {
+	width:80%;
+}
+
+form {
+	padding:10px;
+}
+
+fieldset {
+	padding:10px;
+}
+
+label, input, textarea {
+	margin:5px;
+}
+
+#submit{
+	padding:4px;
+	border:1px solid black;
+	letter-spacing: 1px;
+}
+
+footer p {
+	color:white;
+	align-content:center;
+	padding-right:5px;
+}
+
+footer li:hover {
+	border:2px solid black;
+	text-decoration:underline 2px solid #fc7307;
+}
+
+@media (max-width:550px) {
+	#f ul {
+		display: block;
+	}
+	#lazlo {
+		width:100%;
+	}
+	footer {
+		font-size:0.9em;
+	}
+}
+
+
+
+/*
+#hatter   {
+	background: url("binary.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	margin: 0 auto;
+}*/

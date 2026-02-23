@@ -1,184 +1,119 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2026._02._23_Otthon_gyak
+namespace _2026._02._23_Otthon_gyak_2
 {
     internal class Program
     {
-        /*
-         * Feladat – Nevek feldolgozása tömbben
-Készíts egy C# konzolos alkalmazást, amely keresztneveket kér be a felhasználótól, majd
-különböző műveleteket végez a neveken.
-A program működése:
-1. Bekér N darab keresztnevet (string).
-2. Eltárolja őket egy tömbben.
-3. Meghatározza:
-o a nevek összes karakterének számát,
-o a leghosszabb nevet,
-o minden név monogramját (első + utolsó betű, nagybetűvel).
-4. Kiírja az eredményeket.
-Kötelező metódusok
-Main
-Feladat:
-• Feltölti a neveket tartalmazó tömböt
-• Meghívja a feldolgozó metódusokat
-• Kiírja az eredményeket
-Paraméter: string tömb
-Visszatérés: nincs (void)
-Nevek
-Feladat: Bekér egy keresztnevet a felhasználótól.
-Paraméter: nincs
-Visszatérés: string (a beírt név)
-Feltolt
-Feladat: Létrehoz egy adott méretű string tömböt, majd feltölti nevekkel a Nevek metódus
-segítségével.
-Paraméter: egész szám (a nevek darabszáma)
-Visszatérés: string tömb
-HanyKarakter
-Feladat: Összeszámolja, hogy a tömbben lévő nevek összesen hány karakterből állnak.
-Paraméter: string tömb
-Visszatérés: egész szám
-LeghosszabbNev
-Feladat: Megkeresi és visszaadja a tömbben szereplő leghosszabb nevet.
-Paraméter: string tömb
-Visszatérés: string
-ElsoUtolso
-Feladat: Minden névhez elkészíti a monogramot:
-• első betű + utolsó betű
-• nagybetűs formában
-Az eredményt egy új string tömbben adja vissza.
-Paraméter: string tömb
-Visszatérés: string tömb
-         */
-        static string Nevek()
+        static int dobasokSzama = 0;
+        static int osszegDobas = 0;
+        static Random rnd = new Random();
+     
+        static int Dobas()
         {
-            string Knev;
-            string KulKarakterek = "0123456789!@#$%^&*()_+-=~`|\\:;\"'<>,.?/";
-            do
+            return rnd.Next(1, 7);
+        }
+
+        static int Tipp()
+        {
+            while (true) 
             {
-                Console.WriteLine("Írja be a keresztnevét: ");
-                Knev = Console.ReadLine().Trim();
-                if (Knev.Length < 2)
+                Console.Write ("Szeretnél dobni? (1-igen, 0-nem) ");
+                string valasz = Console.ReadLine().Trim();
+                if (valasz == "0")
                 {
-                    Console.WriteLine("A keresztnevnek legalább 2 karakter hosszúnak kell lennie!");
+                    return 0;
                 }
-                else if (KulKarakterek.Any(Knev.Contains))
+                else if (valasz == "1")
                 {
-                    Console.WriteLine("A keresztnev nem tartalmazhat számokat vagy speciális karaktereket!");
+                    return 1;
                 }
                 else
                 {
+                    Console.WriteLine("Kérem, adjon meg egy érvényes választ! (1-igen, 0-nem)");
+                }
+
+            } 
+        }
+
+        static int Jatek()
+        {
+            while (true)
+            {
+                int tipp = Tipp();
+                if (tipp == 0)
+                {   
                     break;
                 }
-            } while (true);
-            return Knev;
-        }
-
-        static string[] Feltolt(int db)
-        {
-            string[] Nev = new string[db];
-            for (int i = 0; i < db; i++)
-            {
-                Nev[i] = Nevek();
-            }
-            return Nev;
-
-        }
-
-        static int HanyKarakter(string[] Nev)
-        {
-            int db = 0;
-            for (int i = 0; i < Nev.Length; i++)
-            {
-                db += Nev[i].Length;
-            }
-            return db;
-        }
-
-        static string LeghosszabbNev(string[] Nev)
-        {
-            string leghosszabb = Nev[0];
-            for(int i=0;i<Nev.Length;i++)
-            {
-                if (Nev[i].Length > leghosszabb.Length)
+                else if (tipp == 1)
                 {
-                    leghosszabb = Nev[i];
+                    int dobas = Dobas();
+                    dobasokSzama++;
+                    osszegDobas += dobas;
+                    Console.WriteLine($"Dobás eredménye: {dobas}, {dobasokSzama}. dobásnál tartasz, dobások összege eddig: {osszegDobas}");
+                    Console.WriteLine();
+                    if (osszegDobas == 30)
+                    {
+                        return 2;
+                    }
+                    else if (osszegDobas > 30)
+                    {
+                        return 1;
+                    }
+                   /* else if (osszegDobas < 30)
+                    {
+                        continue;
+                    }*/
                 }
             }
-            return leghosszabb;
+            return 0;
         }
 
-        static string[] ElsoUtolso(string[] Nev)
+        static void Kiir(int eredmeny)
         {
-            string[] eu = new string[Nev.Length];
-            for (int i = 0; i < Nev.Length; i++)
+            
+            if (eredmeny == 2)
             {
-                eu[i] = Nev[i][0].ToString().ToUpper() + Nev[i][Nev[i].Length - 1].ToString().ToUpper();
+                Console.WriteLine($"Gratulálok, nyertél! Ennyi dobásból érted el: {dobasokSzama}");
             }
-            return eu;
-
+            else if (eredmeny == 1)
+            {
+                Console.WriteLine($"Sajnos vesztettél! Ennyi dobásból érted el: {dobasokSzama}");
+            }
+            else if (eredmeny == 0)
+            {
+                Console.WriteLine($"Biztonságosan megálltál. Ennyi dobásból érted el: {dobasokSzama}");
+            }
+            
+            Console.WriteLine("Köszönöm, hogy játszottál!");
         }
 
         static void Main(string[] args)
         {
-            string db;
-            int dbszam;
-            bool jo;
-
             while (true)
             {
-                Console.WriteLine("Hány darab nevet szeretne megadni? ");
-                db = Console.ReadLine().Trim();
-
-                jo = true;
-
-                for (int i = 0; i < db.Length; i++)
+                int eredmeny = Jatek();
+                Kiir(eredmeny);
+                Console.WriteLine();
+                Console.WriteLine("Szeretnél újra játszani? (igen/nem)");
+                string ujra = Console.ReadLine().Trim().ToLower();
+               if (ujra =="nem")
                 {
-                    if (db[i] < '0' || db[i] > '9')
-                    {
-                        jo = false;
-                    }
+                    Console.WriteLine("Viszlát!");
+                    break;
                 }
-
-                if (!jo)
+                else if (ujra == "igen")
                 {
-                    Console.WriteLine("Csak számot adhat meg!");
-                }
-                else
-                {
-                    dbszam = int.Parse(db);
+                    dobasokSzama = 0;
+                    osszegDobas = 0;
+                    Console.WriteLine("Kezdődik az új játék!");
 
-                    if (dbszam <= 0)
-                    {
-                        Console.WriteLine("Nem lehet nulla vagy negatív!");
-                    }
-                    else
-                    {
-                        break;
-                    }
                 }
+                
             }
-
-            string[] Nev = Feltolt(dbszam);
-
-            Console.WriteLine("Karakterek száma: " + HanyKarakter(Nev));
-
-            Console.WriteLine("Leghosszabb név: " + LeghosszabbNev(Nev));
-            string[] mono = ElsoUtolso(Nev);
-
-            Console.WriteLine("Monogramok:");
-
-            for (int i = 0; i < mono.Length; i++)
-            {
-                Console.WriteLine(mono[i]);
-            }
-
-
-            Console.ReadKey();
         }
     }
 }

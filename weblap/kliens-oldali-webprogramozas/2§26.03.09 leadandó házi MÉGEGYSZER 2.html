@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.09 leadandó házi mégegyszer 2</title>
+</head>
+<body>
+    <h1>2026.03.09 leadandó házi mégegyszer 2 most html keretttel együtt</h1>
+
+    <script>
+     const Eredmeny=function(kod,szak,pont)
+     {
+        this.NeptunKod=kod;
+        this.Szak= szak;
+        this.ZhPont=pont;
+     }
+
+     const tanulo1= new Eredmeny("ABCDEF","PIA",12);
+     const tanulo2=new Eredmeny("QWERTZ","MIA",13);
+     const tanulo3=new Eredmeny("ASDFGH","PIA",10);
+     const tanulo4=new Eredmeny("PLKJOZ","PIA",11);
+     const tanulo5= new Eredmeny("LKJTRE","MIA",9);
+     const tanulo6=new Eredmeny("ERWSBN","MIA",13);
+     const tanulo7=new Eredmeny("FEUYJO","GIA",10);
+     const tanulo8=new Eredmeny("YXGSUK","GIA",11);
+     const tanulo9=new Eredmeny("STAHOL","GIA",10);
+
+     const ZombEredmeny=[tanulo1,tanulo2,tanulo3,tanulo4,tanulo5,tanulo6,tanulo7,tanulo8,tanulo9];
+
+     function AtlagSzanol(szak)
+     {
+        let osszeg=0;let db=0;
+        for(let i=0;i<ZombEredmeny.length;i++)
+     {
+        if(ZombEredmeny[i].Szak===szak)
+        {
+            osszeg+=ZombEredmeny[i].ZhPont;
+            db++;
+        }
+     }
+     if(db===0)
+     {return "Nincs ilyen szak!"}
+     return Math.round(osszeg/db);
+     }
+
+     console.log("PIA szakosok átlagpontja: "+AtlagSzanol("PIA"));
+     console.log("MIA szakosok átlagpontja: "+AtlagSzanol("MIA"));
+     console.log("GIA szakosok átlagpontja: "+AtlagSzanol("GIA"));
+
+    </script>
+    
+</body>
+</html>

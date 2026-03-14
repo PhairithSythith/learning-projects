@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakorlás</title>
+</head>
+<body>
+    <h1>Gyakorló feladat</h1>
+    <p> Készítsenek egy szöveg konvertálást végző prototípust!
+A prototípus tartalmazza a szöveget és egy tiltott szavak tömbjét!
+Tartalmaz metódust, amely hozzáad egy új szót a tiltott szavakhoz! Üres szót nem lehet hozzáadni, ezt kezelje le kivételkezeléssel!
+Tartalmaz metódust, amely kiírja a konzolta a szöveget és a tiltott szavak listáját!
+Tartalmaz metódust, amely átkódolja a szöveget egy callback függvény segítségével! A függvény a tárolt szövegben kicseréli a tiltott szavakat a callback által előállított szavakra!
+Készítsen egy függvényt, amely egy paraméterül kapott szót átalakít és visszaad úgy, hogy minden karakter után egy alsóvonást tesz!
+Készítsen egy tetszőleges szöveggel egy objektumot a prototípussal! (ekkor még nincs tiltott szó)
+Adjon hozzá legalább 2 tiltott szót a metódusával!
+Írja ki a konzolra az objektum tartalmát a metódusával!
+Írja ki a konzolra az átkovertált szöveget a fenti függvény segítségével!
+
+Példa
+szöveg: helló világ, szia mindenki
+tiltott szavak: helló, szia
+oputput: h_e_l_l_ó világ, s_z_i_a mindeki 
+    </p>
+    <script>
+        
+
+        const SzovegKonverter=function(szoveg)
+        { 
+       this.szoveg=szoveg;
+       this.TiltottSzavak=[];
+      
+
+       this.HozzaAd=function(tilos)
+        { try
+        {
+            if(typeof tilos != "string" || tilos==null || tilos.trim()==="")
+            {throw{
+                name:"UresSzoveg",
+                message:"Üres szöveget nem lehet hozzáadni!"
+            }}
+           this.TiltottSzavak.push(tilos);
+
+        }catch(error)
+        {
+            console.error("Hiba: "+error.name+": "+error.message);
+        }
+        }
+
+       this.Atkodol=function( Callback)
+        {   let szoveg2=this.szoveg;
+            let tilosSzo;
+            let ujszo;
+           for(let i=0;i<this.TiltottSzavak.length;i++)
+           {(tilosSzo=this.TiltottSzavak[i])
+           if(szoveg2.indexOf(tilosSzo)!==-1)
+            {ujszo= Callback(tilosSzo);
+             szoveg2= szoveg2.replace(tilosSzo, ujszo);   
+            }
+           }
+           return szoveg2;
+        }
+    
+       this.Kiir=function()
+       {
+        console.log("A szöveg: "+this.szoveg);
+        console.log("Tiltott szavak listája: "+this.TiltottSzavak);
+       }
+    }
+
+     Callback=function(tilosSzo)
+        { let ujszo="";
+            for(let i=0;i<tilosSzo.length;i++)
+            {ujszo=ujszo+tilosSzo[i];
+                if(i<tilosSzo.length-1)
+                {ujszo=ujszo+"_"}
+            }
+            return ujszo;
+        }
+
+
+        let proba=new SzovegKonverter("SZia mizu te kis homlokszabású narancspucoló sivatagi rókakutya ?");
+        proba.HozzaAd("SZia"); proba.HozzaAd("rókakutya");
+        proba.Kiir();
+        let uj=proba.Atkodol(Callback);
+        console.log("Új szöveg: "+uj);
+
+   </script>
+</body>
+</html>

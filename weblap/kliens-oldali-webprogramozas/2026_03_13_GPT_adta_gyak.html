@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT adta próba zh</title>
+</head>
+<body>
+    <h1>Gyakorló feladat – Szó számláló</h1>
+    <script>
+        var szoTomb=[];
+        const SzoElemzo=function(kapott)
+        {
+            this.szoveg=kapott;
+            
+            this.addSzo=function(szo){
+            try{
+                if(szo==null|| szo.trim()==="" || typeof szo !="string")
+                {throw{
+                    name:"Ures",
+                    message:"Nem lehet üres szót megadni!"
+                }}
+                szoTomb.push(szo);
+            }catch(error){
+                console.error("Hiba: "+error.name+" "+error.message);
+            }}
+
+            this.Kiir=function()
+            {
+                console.log("Szöveg: "+this.szoveg);
+                console.log("Keresett szavak: "+szoTomb);
+            }
+
+            this.Szamol=function(Callback)
+            {
+                let mondat=this.szoveg;
+                let darabMondat=mondat.split(" ");
+                let keresett;
+                let szamol=0;
+                for(let i=0;i<szoTomb.length;i++)
+                { keresett=Callback(szoTomb[i]); 
+                    szamol=0;
+                  for(let j=0;j<darabMondat.length;j++)
+                  {if(darabMondat[j].toLowerCase().replace(/[.,!?]/g,"")===keresett)
+                  {szamol++;}
+                  }
+                  console.log("A(z) "+szoTomb[i]+" szó "+szamol+" -szer/-szor szerepel");
+                }
+            }
+        }
+         Callback=function(keresett)
+         { 
+            return keresett.toLowerCase().trim();
+         }
+
+         let proba=new SzoElemzo("Egy kupac kopasz kukac, meg még egy kupac kopasz kukac, az két kupac kopasz kukac");
+         proba.addSzo("kukac");
+         proba.addSzo("kopasz")
+         proba.addSzo("egy");
+         proba.Kiir();
+         proba.Szamol(Callback);
+    </script>
+</body>
+</html>

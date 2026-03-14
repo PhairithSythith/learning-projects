@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próba zh újból</title>
+</head>
+<body>
+    <h1>Gyakorló feladat</h1>
+    <p>Készítsenek egy szöveg konvertálást végző prototípust! A prototípus tartalmazza a szöveget és egy tiltott szavak tömbjét! Tartalmaz metódust, amely hozzáad egy új szót a tiltott szavakhoz! Üres szót nem lehet hozzáadni, ezt kezelje le kivételkezeléssel! Tartalmaz metódust, amely kiírja a konzolta a szöveget és a tiltott szavak listáját! Tartalmaz metódust, amely átkódolja a szöveget egy callback függvény segítségével! A függvény a tárolt szövegben kicseréli a tiltott szavakat a callback által előállított szavakra! Készítsen egy függvényt, amely egy paraméterül kapott szót átalakít és visszaad úgy, hogy minden karakter után egy alsóvonást tesz! Készítsen egy tetszőleges szöveggel egy objektumot a prototípussal! (ekkor még nincs tiltott szó) Adjon hozzá legalább 2 tiltott szót a metódusával! Írja ki a konzolra az objektum tartalmát a metódusával! Írja ki a konzolra az átkovertált szöveget a fenti függvény segítségével! Példa szöveg: helló világ, szia mindenki tiltott szavak: helló, szia oputput: h_e_l_l_ó világ, s_z_i_a mindeki </p>
+
+<script>
+    const Konvertalo=function(mondat)
+    {
+        this.szoveg=mondat;
+        this.TilosSzoLista=[];
+
+        this.HozzaAd=function(tilos)
+        {
+            try{
+            if(tilos==null || typeof tilos!="string" || tilos.trim()==="" )
+            {throw{
+                name:"UresMondat",
+                message: "Üres mondatot nem lehet megadni!"
+                }}
+            this.TilosSzoLista.push(tilos);
+            }catch(error){
+                console.error("Hiba üzenet: "+error.name+" "+error.message);
+            }
+        }
+        this.Kiir=function()
+        {
+            console.log("Megadott szöveg: "+this.szoveg);
+            console.log("Tiltott szavak listája: "+this.TilosSzoLista);
+        }
+        this.Atkodol=function(Callback)
+        {   let ujSzoveg=this.szoveg;
+            let ujszo;
+            let tilos;
+            for(let i=0;i<this.TilosSzoLista.length;i++)
+            {   tilos=this.TilosSzoLista[i];
+                while(ujSzoveg.indexOf(tilos)!==-1)
+                { ujszo=Callback(tilos);
+                  ujSzoveg=ujSzoveg.replace(tilos,ujszo);}
+            }
+            return ujSzoveg;
+        }
+    }
+     Callback=function(tilos)
+    {
+        let ujszo=""
+        for(let i=0;i<tilos.length;i++)
+        {
+            ujszo=ujszo+tilos[i];
+            if(i<tilos.length-1)
+            {ujszo=ujszo+"_"}
+        }
+        return ujszo;
+    }
+
+    let proba=new Konvertalo("A tűzcsap az nagyon vicces és irónikus mert amúgy víz folyik belőle miközben tűzcsap a neve");
+    proba.Kiir();
+    proba.HozzaAd("tűzcsap");
+    proba.HozzaAd("irónikus");
+    proba.Kiir();
+    let javitottSzoveg= proba.Atkodol(Callback);
+    console.log("Új szöveg: "+javitottSzoveg);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026_03_13_GPT_adta_gyak_2</title>
+</head>
+<body>
+    <h1>2026_03_13_GPT_adta_gyak_2</h1>
+
+    <script>
+        const SzovegVed=function(kapottSzoveg)
+        {
+            this.szoveg=kapottSzoveg;
+            this.tiltottSzavak=[];
+
+            this.HozzaAd=function(tilos)
+            {
+                try{
+                if(typeof tilos!="string" || tilos==null || tilos.trim()==="")
+                {throw{
+                    name:"Ures",
+                    message:"Üres szót nem lehet megadni!" }}
+                this.tiltottSzavak.push(tilos);
+                }catch(error)
+                { console.error("HIBA! "+error.name +": "+error.message);}
+            }
+
+            this.Kiir=function()
+            {
+                console.log("A megadott szöveg: "+this.szoveg);
+                console.log("A tiltott szavak listája: "+this.tiltottSzavak);
+            }
+
+            this.Elrejt=function(Callback)
+            {
+                let tilos;
+                let csere;
+                let mondat=this.szoveg;
+                for(let i=0;i<this.tiltottSzavak.length;i++)
+                { tilos=this.tiltottSzavak[i];
+                    csere=Callback(tilos);
+                    while(mondat.indexOf(tilos)!==-1)
+                    {
+                        mondat=mondat.replace(tilos, csere);
+                    }
+                }
+                return mondat;
+            }
+        }
+        const Callback=function(tilos)
+        {
+            let csillag="";
+            /*
+            let uj="";
+            for(let i=0;i<tilos.length;i++)
+            {
+                uj=uj+tilos[i];
+                if(i<tilos.length-1)
+                {uj=uj+"*"}
+            }
+            return uj; */
+            return "*".repeat(tilos.length);
+        }
+
+        let proba=new SzovegVed("Egyszer egy pici pocakos pocok pocakon pöckölt egy pici pocakos pockot, mire a pocakon pöckölt pici pocakos pocok pocakon pöckölte az pocakpöckölő pici pocakos pocok pici pockát.");
+        proba.HozzaAd("pocok");
+        proba.HozzaAd("pici");
+        proba.Kiir();
+        let szoveg=proba.Elrejt(Callback);
+        console.log("Új szöveg: "+szoveg);
+    </script>
+    
+</body>
+</html>

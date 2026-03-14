@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak_4</title>
+</head>
+<body>
+    <h1>Szó hossz és csillag jelölés</h1>
+    <script>
+        const SzoHosszElemzo=function(mondat)
+        {this.SzoTomb=[];
+            this.Szoveg=mondat;
+
+        this.HozzaAd=function(szo)
+        {
+            try{
+                if(typeof szo!="string"||szo==null||szo.trim()==="")
+                {
+                    throw{
+                        name:"Ures",
+                        message:"Üres szót nem lehet hozzáadni!"
+                    }
+                }
+            this.SzoTomb.push(szo);
+            }catch(error)
+            {console.error("HIBA! "+error.name+": "+error.message);}
+        }
+
+        this.Kiir=function()
+        { let ir=this.SzoTomb.join(", ");
+            console.log("Szavak listája: "+ir);
+        }
+
+        this.Vizsgal=function(Callback)
+        {
+            let mondat=this.Szoveg.toLowerCase();
+            let uj;
+            let szo;
+            for(let i=0;i<this.SzoTomb.length;i++)
+            {
+                szo=this.SzoTomb[i].toLowerCase();
+                while(mondat.indexOf(szo)!==-1)
+                {
+                    uj=Callback(szo);
+                    mondat=mondat.replaceAll(szo, uj);
+                }
+            } 
+            mondat=mondat.charAt(0).toUpperCase() +mondat.slice(1);
+            return mondat;
+        } }
+
+        const Callback=function(szo)
+        {
+            let uj="";
+            for(let i=0;i<szo.length;i++)
+            {uj+="*"}
+            return uj;
+        }
+
+        let proba = new SzoHosszElemzo("Egy icike picike pocok pockon pöckölt egy másik icike picike pockot, erre a pockon pöckölt icike picike pocok pockon pöckölte az őt pockon pöckölő icike picike pockot");
+        proba.HozzaAd("pocok");
+        proba.HozzaAd("picike");
+        proba.Kiir();
+        let uj= proba.Vizsgal(Callback);
+        console.log("Új szöveg: "+uj);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak_3</title>
+</head>
+<body>
+    <h1>Szó csere és számláló</h1>
+    <script>
+        const SzovegElemzo=function(mondat)
+        {
+            this.szoveg=mondat;
+            this.tiltottSzavak=[];
+
+            this.HozzaAd=function(tilos)
+            {
+                try{
+                if(tilos==null||typeof tilos!="string" || tilos.trim()==="")
+                {throw{
+                    name:"Ures",
+                    message:"Üres szót hozzáadni nem lehet!"
+                }}
+                this.tiltottSzavak.push(tilos);
+                }catch(error)
+                {console.error("HIBA! ");}
+            }
+            this.Kiir=function()
+            {   let ir= this.tiltottSzavak.join(", ");
+                console.log("Szöveg: "+this.szoveg);
+                console.log("Tiltott szavak: "+ir);
+            }
+
+            this.Szures=function(Callback)
+            {
+                let mondat=this.szoveg.toLowerCase();
+                let tilos;
+                let uj;
+                for(let j=0;j<this.tiltottSzavak.length;j++)
+                {
+                    tilos=this.tiltottSzavak[j].toLowerCase();
+                    while(mondat.indexOf(tilos)!==-1)
+                    {
+                    uj=Callback(tilos);
+                    mondat=mondat.replaceAll(tilos, uj);
+                    }
+                }
+                return mondat;
+            }
+        }
+
+        const Callback=function(tilos)
+        {
+            let uj="";
+            for(let i=0;i<tilos.length;i++)
+            {uj+="*"}
+            return uj;
+        }
+
+        let pelda=new SzovegElemzo("Egy icike picike pocok pockon pöckölt egy másik icike picike pockot, erre a pockon pöckölt icike picike pocok pockon pöckölte az őt pockon pöckölő icike picike pockot");
+        pelda.HozzaAd("egy");
+        pelda.HozzaAd("pocok");
+        pelda.Kiir();
+        let uj=pelda.Szures(Callback);
+        console.log("Új szöveg: "+uj);
+    </script>
+</body>
+</html>

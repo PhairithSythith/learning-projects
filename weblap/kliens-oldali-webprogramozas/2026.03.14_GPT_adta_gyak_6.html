@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak_6</title>
+</head>
+<body>
+    <h1>Számok szűrése és módosítása</h1>
+    <script>
+        const SzamKezelo=function(kapSzam)
+        {this.Szamok=kapSzam.slice();
+            this.Hozzad=function(szam)
+            {
+                try{
+                    if(typeof szam!="number"||szam%1!==0)
+                    {throw{
+                        name:"Ures",
+                        message:"Egész számot kell megadni!"
+                    }}
+                    this.Szamok.push(szam);
+                }catch(error)
+                {console.error("HIBA! "+error.name+": "+error.message);}
+            }
+            this.Kiir=function()
+            { let ir=this.Szamok.join(", ");
+                console.log("A számok: "+ir);
+            }
+            this.Szures=function(Callback)
+            {   let szam;
+                let szorzo;
+                let eredmeny;
+                let ujTomb=[];
+                for(let i=0;i<this.Szamok.length;i++)
+                { szam=this.Szamok[i];
+                    szorzo=Callback(szam);
+                    eredmeny=szam*(szorzo||1);
+                    console.log(szam+" * "+szorzo+" = " +eredmeny)
+                    ujTomb.push(szam+" * "+szorzo+" = " +eredmeny);
+                }
+                return ujTomb;
+            }
+        }
+
+        const Callback=function(szam)
+        {   
+            if(szam<0) return 2;
+            else if(szam>10) return 3;
+            else if(szam%2===0)return 0;
+            else if(szam%2!==0)return 1;
+        }
+        let ad=[-2,4,-6,38,-75,22,87,34,-3];
+        let proba= new SzamKezelo(ad);
+        proba.Kiir();
+        proba.Hozzad(-11);
+        proba.Hozzad(12);
+        proba.Kiir();
+        proba.Szures(Callback);
+    </script>
+</body>
+</html>

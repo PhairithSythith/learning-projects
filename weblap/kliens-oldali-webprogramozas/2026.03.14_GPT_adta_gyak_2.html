@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak_2</title>
+</head>
+<body>
+    <h1>Szó Szűrő</h1>
+    <script>
+        const SzoSzuro=function()
+        {this.szavakTomb=[];
+
+            this.HozzaAd=function(szo)
+            {
+                try{
+                    if(typeof szo!="string" || szo==null||szo.trim()==="")
+                    {throw{
+                        name:"Ures",
+                        message:"Üres szót nem lehet hozzáadni!"
+                    }}
+                    this.szavakTomb.push(szo);
+                }catch(error)
+                {console.error("HIBA! "+error.name +": "+error.message);}
+            }
+            this.Kiir=function()
+            {   let ir=this.szavakTomb.join(", ");
+                console.log("Szavak: "+ir);
+            }
+            this.Szures=function(Callback)
+            {
+                let szo;
+                let odaad;
+                console.log("Szűrt szavak: ");
+                for(let i=0;i<this.szavakTomb.length;i++)
+                {   szo=this.szavakTomb[i];
+                    odaad=Callback(szo); 
+                    if(odaad===true)
+                    {console.log(szo);}
+                }
+            }
+        }
+
+        const Callback=function(szo)
+        {
+            if(szo.length>=4)
+            return true;
+            else return false; 
+        }
+
+        let proba=new SzoSzuro();
+        proba.HozzaAd("szia");
+        proba.HozzaAd("ad");
+        proba.HozzaAd("kiskutya");
+        proba.HozzaAd("hal");
+        proba.Kiir();
+        proba.Szures(Callback);
+        
+    </script>
+    
+</body>
+</html>

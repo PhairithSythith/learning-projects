@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak_5</title>
+</head>
+<body>
+    <h1>Szám elemző és szorzó</h1>
+    <script>
+        const SzamElemzo=function(kapSzamok)
+        {this.Szamok=kapSzamok.slice();
+
+            this.HozzaAd=function(ujSzam)
+            {
+                try{
+                    if(typeof ujSzam!="number"&&ujSzam%1!=0)
+                    {throw{
+                        name:"Ures",
+                        message:"Csak olyan számot lehet megadni, ami egész szám!"
+                    }}
+                    this.Szamok.push(ujSzam);
+                }catch(error)
+                {console.error("HIBA! "+error.name+": "+error.message);}
+            }
+            this.Kiir=function()
+            {
+                let ir=this.Szamok.join(", ");
+                console.log("A számok: "+ir);
+            }
+            this.Szorzas=function(Callback)
+            {   let szam;
+                let uj;
+                let szorzo;
+                for(let i=0;i<this.Szamok.length;i++)
+                {   szam=this.Szamok[i];
+                    szorzo=Callback(szam);
+                    uj=szam*(szorzo||1);
+                    console.log(szam+" * "+szorzo+" = "+uj);
+                }
+                return uj;
+                }
+            }
+
+        const Callback=function(szam)
+        {
+            if(szam%2===0)
+            {return 3}
+            else return 0;
+        }
+        let szamok=[2,3,4,6,7,8,9,1,13,97,43,22];
+        let proba= new SzamElemzo(szamok);
+        proba.Kiir();
+        proba.HozzaAd(99);
+        proba.HozzaAd(17);
+        proba.Kiir(); 
+        proba.Szorzas(Callback);
+    </script>
+</body>
+</html>

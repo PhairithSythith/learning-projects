@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak</title>
+</head>
+<body>
+    <h1>Szó hossz ellenőrző</h1>
+    <script>
+        const SzoVizsgalo=function()
+        {this.szavakTomb=[];
+
+        this.Hozzaad=function(szo)
+        {
+            try{
+                if(szo==null || szo.trim()==="" || typeof szo!="string")
+                {throw{
+                    name:"Ures",
+                    message:"Üres szót nem lehet megadni!"
+                }}
+                this.szavakTomb.push(szo);
+            }catch(error)
+            {console.error("HIBA! "+error.name+": "+error.message);}
+        }
+
+       this.Kiir=function()
+        {
+            let felsorolas=this.szavakTomb.join(", ");
+            console.log("Szavak: "+ felsorolas);
+        }
+
+        this.Vizsgal=function(Callback)
+        {   
+            let szo;
+            let odaAd;
+            console.log("Szavak hossza: ");
+            for(let i=0;i<this.szavakTomb.length;i++)
+            {
+                szo=this.szavakTomb[i];
+                odaAd=Callback(szo);
+                console.log(szo+" -> "+odaAd);
+            }
+        }
+    }
+
+        const Callback=function(kapott)
+        {
+            return kapott.length;
+        }
+
+        let proba= new SzoVizsgalo();
+        proba.Hozzaad("Szijja");
+        proba.Hozzaad("Aztakutyamindenit");
+        proba.Kiir();
+        proba.Vizsgal(Callback);
+
+
+    </script>
+    
+</body>
+</html>

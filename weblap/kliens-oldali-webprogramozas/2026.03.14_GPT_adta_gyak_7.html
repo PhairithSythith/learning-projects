@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.14_GPT_adta_gyak_7</title>
+</head>
+<body>
+    <h1>SzámElemző</h1>
+    <script>
+        const SzamElemzo=function(kapSzam)
+        {this.szamTomb=kapSzam.slice();
+
+            this.HozzaAd=function(kapSzam)
+            {
+                try{
+                    if(typeof kapSzam!=="number" || kapSzam%1!==0)
+                    {throw{
+                        name:"RosszSzam",
+                        message:"Csak egész számot lehet megadni!"
+                    }}
+                    this.szamTomb.push(kapSzam);
+                }catch(error)
+                {console.error("HIBA! "+error.name+": "+error.message);}
+            }
+
+            this.Kiir=function()
+            {let ir= this.szamTomb.join(", ");
+                console.log("Számok: "+ir);
+            }
+
+           this.Elemzes=function(Callback)
+            {
+                let pozitiv=0;
+                let negativ=0;
+                let paros=0;
+                let paratlan=0;
+
+                for(let i=0;i<this.szamTomb.length;i++)
+                {
+                let szam=this.szamTomb[i];
+
+                if(Callback(szam,"pozitiv")) pozitiv++;
+                if(Callback(szam,"negativ")) negativ++;
+                if(Callback(szam,"paros")) paros++;
+                if(Callback(szam,"paratlan")) paratlan++;
+                }
+
+                console.log("Összes szám: "+this.szamTomb.length);
+                console.log("Pozitív számok: "+pozitiv);
+                console.log("Negatív számok: "+negativ);
+                console.log("Páros számok: "+paros);
+                console.log("Páratlan számok: "+paratlan);
+            }
+        }
+
+        const Callback=function(szam, tipus)
+            {
+                if(tipus==="pozitiv") return szam>0;
+                if(tipus==="negativ") return szam<0;
+                if(tipus==="paros") return szam%2===0;
+                if(tipus==="paratlan") return szam%2!==0;
+            }
+
+        let tomb=[1,68,-13,-12,98,143,465,324,3,9,8];
+        let proba= new SzamElemzo(tomb);
+        proba.Kiir();
+        proba.HozzaAd(12);
+        proba.HozzaAd(-20);
+        proba.Kiir();
+        proba.Elemzes(Callback);
+    </script>
+</body>
+</html>

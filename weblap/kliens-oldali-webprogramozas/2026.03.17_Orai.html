@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx</title>
+</head>
+<body>
+    <h1>Regexek</h1>
+    <script>
+        const szoveg= "Hello vilag, hello mindenki";
+      //  const minta=/hello/; //"/hellx/" vagy /"hello"/
+      //  const minta=/hello/i; //az i azt jelenti, hogy figyelmen kívül hagyja a kis és nagybetűket, szóval nem tesz köztük különbséget
+      const minta=/hello/ig; //a g azt jelenti hogy az összes ilyen szót nézi, szóval globálisan figyeli a kapott szövegbenaz összes szót  
+      //szöveg formázásra jóa regex, ellenőrzi hogy mi és/vagy hogyan van a kapott szövegben
+        console.log(minta.test(szoveg));// a megadott mintát tartalmazza e
+        console.log(szoveg.match(minta));//benne van e
+        console.log(szoveg.search(minta));//hol van benne
+        console.log(szoveg.replace(minta,"szia"));//megkeresi a szövegben a minttát és kicseréli arra amire akarjuk
+       // console.log(szoveg.replaceAll(minta, "szia"));//így az összeset kicseréli sziára
+    
+    const abc=/[abc]/g; //EZ AZT JELENTI ÍGY (kivéve g) HOGY VAGY A VAGY B VAAGY C
+    console.log(szoveg.match(abc));
+    const kisbetuk=/[a-z]/g; //így tartományban adjuk meg (kivéve g), a-tól z-ig nézi az angol abc szerint
+    console.log(szoveg.match(kisbetuk));
+    const betuk=/[a-zA-Z]/g; //így az összes kis betűt és nagy betűt nézi
+    console.log(szoveg.match(betuk));
+
+    const hello=/(Hello||hello)/g; //vagy a Hello vagy a hello keresi és nézi, ez nem kis-nagy betű figyelmen kívül hagyó, ebbe pl a HELLO már nincs benne, azt nem nézi 
+    console.log(szoveg.match(hello));
+
+    const szokarakterek=/\w/g; //szókaraktert nézi
+    console.log(szoveg.match(szokarakterek));
+
+    const szam=/\d/g; //számkaraktert nézi itt is lehet [] használni
+    console.log(szoveg.match(szam));
+
+    const h=/h/g; //pontosan csak 1 h
+    console.log(szoveg.match(h));
+
+    const hLegalabbEgyH=/h+/g; //legalább 1 h
+    console.log(szoveg.match(hLegalabbEgyH));
+    
+    const hLegfeljebbEgyH=/h?/g; //legfeljebb 1 h
+    console.log(szoveg.match(hLegalabbEgyH));
+    
+    const hVmennyiH=/h*/g; //valamennyi h, 1 vagy több
+    console.log(szoveg.match(hVmennyiH));
+
+    const hEnnyi=/h{2,3}/g; //legalább 2 h de legfeljebb 3 h 
+    // ha így van: /h{2,}/g; legalább kettő felső korlát nincs
+    //ha így van: /h{,3}/g; akkor legfeljebb 3 h
+    console.log(szoveg.match(hEnnyi));
+
+    const helloElejen=/^hello/i; //ezt azt jelenti hogy az elején legyen
+    console.log(szoveg.match(helloElejen));
+    const helloVegen=/hello$/i; // ez azt jeleni, hogy  a végén legyen a hello
+    console.log(szoveg.match(helloVegen));
+    const PontosanEz=/^hello$/i; //ez azt jelenti hogy így kezdődjön és így is végződjön
+    console.log(szoveg.match(PontosanEz));
+
+
+
+
+
+    //REGEX próbálgatására fasza oldal: https://regex101.com/r/WaQLv4/1
+
+
+    // +36/70/1234567
+    //+36-1-123456 regexel csak ezt a 2 fajta telszámot fogadhatja el
+
+    const csakEzJo=/^(?:\+36\/\d{2}\/\d{7}|\+36-\d{1,2}-\d{6,7})$/ig;
+    const tel1="+36/70/1234567";
+    const tel2="+36-1-123456";
+    console.log(tel1.match(csakEzJo));
+    console.log(tel2.match(csakEzJo));
+
+    //jelszo -> azt ellenőrízni, legalább 6 karakter, spec karakter, kicsi-nagybetű, legyen, tartalmazzon számot és ha nem jó dobja vissza
+
+    const Jo=function(jelszo)
+    {   const elfogad=
+        this.jelszo=jelszo;
+        try{
+            if(jelszo.length<6)
+            {throw{
+                name:"RosszJelszo",
+                message:"Legalább 6 karakter hoszzúnak kell lennie!"
+            }}
+            if(!/[a-zöüóőúűéáí]/.test(jelszo))
+            {throw{
+                name:"RosszJelszo",
+                message:"Kisbetűt is kell tartalmaznia!"
+            }}
+
+        }catch(error)
+        {console.error("HIBA! "+error.name+": "+error.message);}
+    }
+
+    Jo("SziaMia1!");
+    </script>
+
+</body>
+</html>

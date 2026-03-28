@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.16_Otthon_gyak</title>
+</head>
+<body>
+    <h1>Próba zh újból</h1>
+    <script>
+        const SzovegKonvertalo=function(szoveg)
+        {
+            this.tiltottSzavak=[];
+            this.szoveg=szoveg;
+
+            this.HozzaAd=function(tilos)
+            {
+                try{
+                    if(typeof tilos !="string" || tilos==null|| tilos.trim()==="")
+                    {
+                        throw{
+                            name:"Ures",
+                            message:"Üres szót nem lehet megadni"
+                        }
+                    }
+                    this.tiltottSzavak.push(tilos);
+                }catch(error)
+                {console.error("HIBA! "+error.name+": "+error.message);}
+            }
+            
+            this.Kiir=function()
+            {
+                console.log("Megadott szöveg: "+this.szoveg);
+                console.log("Tiltott szavak listája: "+this.tiltottSzavak.join(", "));
+            }
+            this.Atkodol=function(Callback)
+            {
+                let ujszoveg=this.szoveg;
+                let ujszo;
+                let tilos;
+                for(let i=0;i<this.tiltottSzavak.length;i++)
+                {   tilos=this.tiltottSzavak[i];
+                    while(ujszoveg.indexOf(tilos)!==-1)
+                    {ujszo=Callback(tilos);
+                       ujszoveg=ujszoveg.replace(tilos,ujszo);
+                    }
+                }
+                return ujszoveg;
+            }
+        }
+        const Callback=function(tilos)
+        {
+            let ujszo="";
+            for(let i=0;i<tilos.length;i++)
+            {
+                ujszo+=tilos[i];
+                if(i<tilos.length-1)
+                {ujszo+="_"}
+            }
+            return ujszo;
+        }
+
+        let proba= new SzovegKonvertalo("Mivan te kis uszadék fa, ne itt egyen a fene te kis bendő takargató");
+        proba.HozzaAd("uszadék");
+        proba.HozzaAd("fene");
+        proba.Kiir();
+        let uj= proba.Atkodol(Callback);
+        console.log("Új szöveg: "+uj);
+    </script>
+    
+</body>
+</html>

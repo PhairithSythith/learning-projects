@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.03.17_elso_zh</title>
+</head>
+<body>
+    <script>
+        const Diak=function(nev, neptunkod)
+        {
+            this.nev=nev;
+            this.neptunKod=neptunkod;
+            this.jegyTomb=[];
+
+            this.HozzaAd=function(jegy)
+            {
+                try{
+                if(typeof jegy!="number" || jegy==null|| jegy<1 || jegy>5)
+                {
+                    throw{
+                      name:"RosszJegy",
+                      message:"Csak számot lehet megadni és csak 1 és 5 között!"
+                    }
+                }
+                this.jegyTomb.push(jegy);
+                }catch(error)
+                {console.error("HIBA! "+error.name+": "+error.message);}
+            }
+
+            this.Kiir=function()
+            {
+                console.log("Diák neve: "+this.nev+ ", neptun kódja: "+this.neptunKod+", jegyei: "+this.jegyTomb.join(", "));
+            }
+
+            this.Szamolo=function(Callback)
+            { 
+                let szamol=this.jegyTomb;
+                let eredmeny=Callback(szamol);
+               /* let jegy;
+                let eredmeny;
+                for(let i=0;i<szamol.length;i++)
+                {   
+                    jegy=szamol[i];
+                    eredmeny=Callback(jegy);
+                }*/
+                return eredmeny;
+            }
+                
+        }
+      const Callback=function(szamol)
+        {   
+            let osszead=0;
+            for(let i=0;i<szamol.length;i++)
+            {osszead+=szamol[i];}
+            let atlag=osszead/szamol.length;
+            return atlag;
+        }
+    
+
+        let diak= new Diak("Marci","DE5JFI");
+        diak.HozzaAd(2);
+        diak.HozzaAd(5);
+        diak.HozzaAd(7);
+        diak.Kiir();
+        let atlag= diak.Szamolo(Callback);
+        console.log("Átlag: " +atlag)
+    </script>
+</body>
+</html>

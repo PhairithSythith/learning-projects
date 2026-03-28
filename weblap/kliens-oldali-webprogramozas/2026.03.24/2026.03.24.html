@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- <script src="script.js" defer></script> pl ide-->
+    <!-- a script fájlt szokás legalulra tenni, felülre is szokás de akkor nem mindegy a betöltés-->
+</body>
+</head>
+<body>
+    <h1 id="focim">DOM</h1> <!--document object model (html weblap rész semmi más)--> 
+    <h2 name="alcím"><u>DOM csúcsok és elérések</u></h2>
+
+    <h2 class="fontos"><u>DOM csúcsok tulajdonságai</u></h2>
+    <style>.fontos{
+        font-style: italic;
+    }
+    td{
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+    }
+    </style>
+
+    <h2>Űrlapok</h2>
+    <form>
+        <label for="nev">Név</label>
+        <input type="text" id="nev">
+    </form>
+
+    <h1>Események</h1>
+    <p onclick="helovilag()" id="tsa">Hello</p>
+    <p >Tsákány</p>
+
+    <h2>Esemény objektumai</h2>
+    <ul>
+        <li>this-Amire definiált</li>
+        <li>target-Ami kiváltja</li>
+    </ul>
+
+
+    
+    <h1>Feladat</h1>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <button>General</button>
+
+    <p>
+        A gombra klikkelva írja a számokat 1-4-ig véletlenszerű sorrendben a két táblázatban!
+        És ha a felhasználó az első táblazat vaélamely cellájára dupla klikkel  akkor színezze be a másik táblázat ennek megfelelő(vagyis azonos tartalmú) celláját sárgára!
+    </p>
+
+
+
+
+    <script src="script.js"></script><!--így lehet beillsezteni a külön js fájlt-->
+    <!-- a script fájlt szokás legalulra tenni, felülre is szokás de akkor nem mindegy a betöltés-->
+    <!-- az async az azt jelenti, hogy egyszerre tölti be és futattja a html és js-->
+    <!-- a defer-nél is egyszerre töltődnek be de itt először csak a html futtatódik le és aztán a js-->
+</body>
+</body>
+</html>

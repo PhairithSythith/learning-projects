@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.04.20_1_zh_gyak_6</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin-top: 10px;
+        }
+        #osszeAd{
+            min-width: 30px;
+            min-height: 30px;
+            max-width: 50px;
+            max-width: 50px;
+            text-align: center;
+            align-content: center;
+            background-color: aqua;
+            color: black;
+            margin: 10px;
+        }
+        #kartyaTarolo{
+            display: flex;
+            flex-direction: row;
+        }
+        .kartyaDb{
+            min-width: 30px;
+            min-height: 30px;
+            max-width: 50px;
+            max-width: 50px;
+            text-align: center;
+            align-content: center;
+            background-color: aquamarine;
+            color:blue;
+            margin: 10px;
+        }
+        form, button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="urlap">
+        <label for="minErtek">Min érték:</label>
+        <input type="number" name="minErtek" id="minErtek" required>
+        <label for="maxErtek">Max érték:</label>
+        <input type="number" name="maxErtek" id="maxErtek" required>
+        <input type="submit" id="ment" name="ment" value="Ment">
+    </form>
+
+    <div id="osszeAd">0</div>
+
+    <div id="kartyaTarolo"></div>
+
+    <button id="ujra" type="button">Újra</button>
+    
+    <script src="2026.04.20_1_zh_gyak_6.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+ALTER TABLE diak
+ADD CONSTRAINT `Jar`
+FOREIGN KEY (osztalyEvf,  osztalyBetuk) REFERENCES osztaly(evf, betu)
+ON DELETE SET NULL ON UPDATE CASCADE 

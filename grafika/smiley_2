@@ -1,0 +1,48 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ----- Bal szem -----
+P00 = np.array([0.5, 1.5])
+P01 = np.array([0.6, 1.8])
+P02 = np.array([0.7, 1.5])
+
+# ----- Jobb szem -----
+G00 = np.array([1.3, 1.5])
+G01 = np.array([1.4, 1.8])
+G02 = np.array([1.5, 1.5])
+
+# ----- Száj -----
+D00 = np.array([0.5, 0.8])
+D01 = np.array([1.0, 0.2])
+D02 = np.array([1.5, 0.8])
+
+# Bézier-görbe
+def bezier_curve(t, P0, P1, P2):
+    return (1 - t)**2 * P0 + 2 * (1 - t) * t * P1 + t**2 * P2
+
+# t értékek
+t_values = np.linspace(0, 1, 100)
+
+curve_points0 = np.array([bezier_curve(t, P00, P01, P02) for t in t_values])
+curve_points1 = np.array([bezier_curve(t, G00, G01, G02) for t in t_values])
+curve_points2 = np.array([bezier_curve(t, D00, D01, D02) for t in t_values])
+
+# Görbék rajzolása
+plt.plot(curve_points0[:, 0], curve_points0[:, 1], linewidth=3)
+plt.plot(curve_points1[:, 0], curve_points1[:, 1], linewidth=3)
+plt.plot(curve_points2[:, 0], curve_points2[:, 1], linewidth=3)
+
+# Fej körvonala
+circle = plt.Circle((1, 1), 1, fill=False, linewidth=3)
+plt.gca().add_patch(circle)
+
+# Tengelyarány!
+plt.axis('equal')
+
+# Határok
+plt.xlim(-0.2, 2.2)
+plt.ylim(-0.2, 2.2)
+
+plt.title("Smiley Bézier-görbékkel")
+plt.grid(True)
+plt.show()

@@ -1,0 +1,43 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+E01 = np.array([3, 10])  # Kezdő pont
+E02 = np.array([1, 9])  # Irányító pont
+E03 = np.array([3, 8])  # Végpont
+
+E11 = np.array([3, 3])  # Kezdő pont
+E12 = np.array([1, 2])  # Irányító pont
+E13 = np.array([3, 1])  # Végpont
+
+E21 = np.array([5, 12])  # Kezdő pont
+E22 = np.array([7, 6])  # Irányító pont
+E23 = np.array([5, 0])  # Végpont
+
+# A Bezier-görbe egyenlete
+def bezier_curve(t, P0, P1, P2):
+    return (1 - t)**2 * P0 + 2 * (1 - t) * t * P1 + t**2 * P2
+
+# T-értékek, amik mentén kiszámoljuk a görbét
+t_values = np.linspace(0, 1, 100)
+curve_points0 = np.array([bezier_curve(t, E01, E02, E03) for t in t_values])
+curve_points1 = np.array([bezier_curve(t, E11, E12, E13) for t in t_values])
+curve_points2 = np.array([bezier_curve(t, E21, E22, E23) for t in t_values])
+
+# Ábrázoljuk a görbét és a pontokat
+plt.plot(curve_points0[:, 0], curve_points0[:, 1], label="eye0")
+plt.plot(curve_points1[:, 0], curve_points1[:, 1], label="eye1")
+plt.plot(curve_points2[:, 0], curve_points2[:, 1], label="mouth")
+#plt.scatter([P0[0], P1[0], P2[0]], [P0[1], P1[1], P2[1]], color='red', label="Pontok (P0, P1, P2)")
+#plt.text(P0[0], P0[1], 'P0', fontsize=12, ha='right')
+#plt.text(P1[0], P1[1], 'P1', fontsize=12, ha='right')
+#plt.text(P2[0], P2[1], 'P2', fontsize=12, ha='right')
+
+# Cím és címkék
+plt.title("Smiley")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+
+# Ábra megjelenítése
+plt.grid(True)
+plt.show()

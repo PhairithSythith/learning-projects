@@ -1,0 +1,45 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Bézier-görbe
+def bezier_curve(t, P0, P1, P2):
+    return (1 - t)**2 * P0 + 2 * (1 - t) * t * P1 + t**2 * P2
+
+t_values = np.linspace(0, 1, 200)
+
+# ---- Bal felső ív ----
+A0 = np.array([0, 0])
+A1 = np.array([1, 2])
+A2 = np.array([2, 0])
+
+# ---- Jobb alsó ív ----
+B0 = np.array([2, 0])
+B1 = np.array([1, -2])
+B2 = np.array([0, 0])
+
+curve1 = np.array([bezier_curve(t, A0, A1, A2) for t in t_values])
+curve2 = np.array([bezier_curve(t, B0, B1, B2) for t in t_values])
+
+# Másik oldal
+C0 = np.array([2, 0])
+C1 = np.array([3, 2])
+C2 = np.array([4, 0])
+
+D0 = np.array([4, 0])
+D1 = np.array([3, -2])
+D2 = np.array([2, 0])
+
+curve3 = np.array([bezier_curve(t, C0, C1, C2) for t in t_values])
+curve4 = np.array([bezier_curve(t, D0, D1, D2) for t in t_values])
+
+# Rajzolás
+plt.plot(curve1[:,0], curve1[:,1], linewidth=3)
+plt.plot(curve2[:,0], curve2[:,1], linewidth=3)
+plt.plot(curve3[:,0], curve3[:,1], linewidth=3)
+plt.plot(curve4[:,0], curve4[:,1], linewidth=3)
+
+plt.axis('equal')
+plt.grid(True)
+plt.title("Végtelen jel Bézier-görbékkel")
+
+plt.show()

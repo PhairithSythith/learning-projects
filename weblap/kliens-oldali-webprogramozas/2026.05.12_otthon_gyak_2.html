@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.05.12_otthon_gyak_2</title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="2026.05.12_otthon_gyak_2.js" defer></script>
+    <style>
+        #kepekTarolo{
+            display: flex;
+            flex-direction: row;
+            gap:10px;
+        }
+        .kepek{
+            width:250px;
+            height: 250px;
+            border-radius: 20px;
+        }
+        #nagyAblak{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top:0;
+            background-color:rgba(96, 96, 96, 0.4);
+            z-index: 10;
+        }
+        .nagyKep{
+            width: 1000px;
+            height: 1000px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .kepDoboz{
+            position: relative;
+            display: inline-block;
+        }
+        .x{
+            position: absolute;
+            top: 300px;
+            right: 370px;
+            width: 80px;
+            height: 80px;
+            z-index: 20;
+            font-size: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .x:hover{
+            background-color: red;
+            color: white;
+        }
+        #nkAblak {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .sz{
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="kepekTarolo"></div>
+
+    <div id="nagyAblak">
+        <div id="nkAblak"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.05.05_orai</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="2026.05.05_orai.js" defer></script>
+    <style>
+        li {
+            list-style-type:none;
+            margin: 5px;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .selected{
+            border-color: red;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>jQuery DOM</h1>
+
+    <ul id="lista">
+        <li>Bélabá</li>
+        <li>Jóskabá</li>
+        <li>Pistabá</li>
+    </ul>
+
+    <button id="ujE">Új elem</button>
+    <button id="torolE">Töröl</button>
+
+    <form id="urlap">
+        <fieldset>
+            <legend>Új listaelem</legend>
+            <label for="elem">Elem:</label>
+            <input type="text">
+            <input type="submit" name="submit" id="submit" value="Ment">
+        </fieldset>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órai gyakorló feladat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script  src="2026.05.05_orai_kapottGYak.js"></script>
+    <style>
+    body{
+    font-family: Arial, sans-serif;
+    background-color:bisque;
+    text-align: center;
+    }
+    #urlap{
+    margin: 20px;
+    }
+    input[type=text]{
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid brown;
+    width: 200px;
+    }
+    input[type=submit]{
+    padding: 8px 12px;
+    border: 1px solid brown;
+    border-radius: 8px;
+    background-color:  burlywood;
+    color: white;
+    cursor: pointer;
+    }   
+    input[type=submit]:hover{
+    background-color:goldenrod;
+    }
+    #listak{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    }
+    .lista-box{
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 220px;
+    }
+    ul{
+    padding: 0;
+    }
+    li{
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: transform 0.2s;
+    }
+    li:hover{
+    background-color: #ddd;
+    transform: scale(1.03);
+    }
+    .selected{
+    background-color: #ffd6d6;
+    border: 2px solid #ff6b6b;
+    }
+    #Kezs li{
+    background-color: #d4edda;
+    }
+    button{
+    margin: 15px 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    }
+    #kesz{
+    background-color: #0b8726;
+    color: white;
+    }
+    #kesz:hover{
+    background-color: #1cf07f;
+    color: black;
+    }
+    #torol{
+    background-color: #8f271f;
+    color: white;
+    }
+    #torol:hover{
+    background-color: #ff0000;
+    color: black;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <form id="urlap">
+        <label for="teendo">Új teendő: </label>
+        <input type="text" name="teendo" id="teendo">
+        <input type="submit" name="submit" id="submit" value="Hozzáadás">
+    </form>
+
+    <div id="listak">
+        <div class="lista-box">
+            <h3>To-Do List</h3>
+            <ul id="nincsKezs"></ul>
+        </div>
+
+        <div class="lista-box">
+            <h3>Finished</h3>
+            <ul id="Kezs"></ul>
+        </div>
+    </div>
+
+    <button id="kesz">Kész</button>
+    <button id="torol">Töröl</button>
+</body>
+</html>

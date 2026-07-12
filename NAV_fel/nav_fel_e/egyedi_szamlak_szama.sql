@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT ESST_ID) AS egyedi_szamlak_szama FROM szamla;

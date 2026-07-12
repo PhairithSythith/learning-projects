@@ -1,0 +1,2 @@
+SELECT g.VALLALATMERET, COUNT(*) / COUNT(DISTINCT g.AA_AZON) AS atlagos_szamlak_vallalkozasonkent FROM gazdmut as g
+JOIN szamla as s ON s.V_ADOSZAM_TORZSSZAM_DEP = g.AA_AZON GROUP BY g.VALLALATMERET;

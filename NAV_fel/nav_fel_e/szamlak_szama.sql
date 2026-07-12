@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS szamlak_szama FROM szamla;

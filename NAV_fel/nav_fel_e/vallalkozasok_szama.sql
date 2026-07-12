@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS vallalkozasok_szama FROM gazdmut;

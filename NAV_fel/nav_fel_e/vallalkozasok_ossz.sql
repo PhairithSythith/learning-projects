@@ -1,0 +1,1 @@
+SELECT VALLALATMERET, COUNT(*) AS vallalkozasok_ossz FROM gazdmut GROUP BY vallalatmeret ORDER BY vallalkozasok_ossz desc;

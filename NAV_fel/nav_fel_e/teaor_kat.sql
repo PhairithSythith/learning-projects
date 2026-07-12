@@ -1,0 +1,2 @@
+SELECT g.TEAOR_KATEGORIA, COUNT(*) AS szamlak_szama, SUM(s.X_BRUTTO_HUF) AS ossz_brutto, AVG(s.X_BRUTTO_HUF) AS atlag_brutto
+FROM gazdmut AS g JOIN szamla AS s ON s.V_ADOSZAM_TORZSSZAM_DEP = g.AA_AZON GROUP BY g.TEAOR_KATEGORIA ORDER BY ossz_brutto DESC;

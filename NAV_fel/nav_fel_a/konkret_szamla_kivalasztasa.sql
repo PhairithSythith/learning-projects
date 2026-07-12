@@ -1,0 +1,1 @@
+SELECT * FROM szamla wHERE id = 125;

@@ -1,0 +1,66 @@
+NAV KI - Adatbányász gyakornoki program
+	
+Mellékletekjúl. 1., Sze 9:32 (6 nappal ezelőtt)
+	
+	
+címzett: én
+
+Tisztelt Jánk Titanilla!
+
+ 
+
+Köszönjük, hogy érdeklődik a gyakornoki programunk iránt és nagyon köszönjük a megküldött információkat is!
+
+ 
+
+ 
+
+Az alábbiakban küldünk egy rövid „beugró” feladatot, amely egy egyszerűbb, adatok feldolgozását, értelmezését igénylő önálló, otthon elvégezhető munka (minden jelentkező ugyanazt kapta). A feladat megoldása mellett, a megoldás módját (pl. a kódot, vagy a megoldás lépéseit tartalmazó fájlt) is vissza kell majd küldeni.
+
+ 
+
+A beugró feladat tehát a következő lenne:
+
+-              A csatolt két csv fájlban található adatok felhasználásával készíteni kellene egy rövid leíró elemzést az alábbi jellemzők szerint:
+
+o             A végeredmény 1 A4-es oldalnál nem rövidebb és 2 oldalnál nem hosszabb (kód nélkül, de beleértve az esetleges ábrákat, vagy táblákat). Formátuma lehet .docx, .pdf, .html, .pptx, vagy bármely ezekhez hasonló megoldás, illetve akár képfájl is.
+
+o             Tartalmaz legalább egy táblázatot az ön által fontosnak tartott mutatókkal, információkkal
+
+o             Tartalmaz legalább egy ábrát az ön által legfontosabbnak tartott jellemző, jelenség illusztrálására
+
+o             Szövegesen megfogalmazva összefoglalja a legfontosabb tudnivalókat az adatokról (nem technikai, hanem tartalmi értelemben) és az adatok alapján a sokaságról megfogalmazható állításokat, jellemzőket, vagy levonható következtetéseket
+
+o             A feladat során tetszőleges módszertan, statisztikai eszköz, vagy megközelítés alkalmazható. Nincs előre meghatározott helyes válasz, amire törekedni kellene, a célunk annak felmérése, hogy milyen eszközökkel fogna neki az adatok feldolgozásának, milyen gondolatmenet mentén keresne információkat egy adathalmazban és azokat miként mutatná be.
+
+-              Rövid információ az adatokról
+
+o             A gazdmut.csv tábla vállalatok véletlen mintáját tartalmazza, egy egyedi azonosítóval és két jellemzővel.
+
+o             A szamla.csv tábla olyan számlák adatait tartalmazzák, ahol a gazdmut táblában szereplő vállalkozások a számla vevői oldalán szerepelnek. A számlák minden esetben valamilyen olyan áru, vagy szolgáltatás vásárlásáról szólnak, amely a vállalkozások adminisztratív teendőihez kötődik (pl. könyvelés, vagy kapcsolódó szoftverek, stb.) A tábla tartalmazza a számla azonosítóját, a vevő azonosítóját, a számla értékét és a számlán szereplő termék, vagy szolgáltatás kategóriáját. (Az értékek valós számlák véletlen számmal módosított adatait tartalmazzák.) A kategóriák képzése külön-külön történt a számlák megnevezésekre alapuló keresőkifejezésekkel, így előfordulhat, hogy egy számla több kategóriába is bekerült.
+
+ 
+
+Továbblépésre csak a visszaküldést és kiértékelést követően van lehetőség.
+
+ 
+
+Bízom benne, hogy a fentiek elfogadhatóak és a feltételek teljesítése esetén tudunk találni olyan keretet, amiben csatlakozni tud a gyakornoki programunkhoz!
+
+ 
+
+Feladatmegoldását érdeklődve várjuk!
+
+ 
+
+Üdvözlettel:
+
+ 
+
+Csicsai Balázs
+
+ 
+
+Nemzeti Adó- és Vámhivatal
+
+ 
